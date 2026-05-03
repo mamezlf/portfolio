@@ -14,7 +14,7 @@ interface Project {
   images?: string[];
   accentColor: string;
   emoji: string;
-  type: 'origin' | 'team' | 'personal';
+  type: 'origin' | 'team' | 'personal' | 'internship';
 }
 
 const projects: Project[] = [
@@ -66,6 +66,23 @@ const projects: Project[] = [
     type: 'team',
   },
   {
+    id: 'internship',
+    period: '大学3年〜大学院 / 2024–',
+    name: '日本IT企業 長期インターン',
+    tagline: '後輩として信頼してもらいながら、価値を届けることを考えた。',
+    story:
+      '「お客様からいただいた金額以上の価値を届ける」という経営姿勢と、幸せの循環を考える文化に共感して飛び込んだ。\n新規事業の立ち上げからシステム開発・実運用まで、1年以上にわたって携わった。\nここで初めて「会社の立場」から物事を見る視点を得て、ビジネスの面白さと、専門性を活かして価値を生み出す喜びを知った。',
+    tags: ['新規事業', 'システム開発', 'チーム開発', 'ビジネス理解'],
+    highlights: [
+      '「払った以上の価値を届ける」理念に共感し、自分もその一翼を担いたいと思った',
+      '後輩として大事にされ、信頼してもらいながら、価値を生み出す経験を積んだ',
+      'ビジネスの視点・会社の立場という、専門外の世界観を初めて体感した',
+    ],
+    accentColor: '#7ec8a0',
+    emoji: '🏢',
+    type: 'internship',
+  },
+  {
     id: 'uriage',
     period: '大学院 / 2026',
     name: 'URIAGE',
@@ -96,6 +113,7 @@ const typeLabel: Record<string, string> = {
   origin: '原点',
   team: 'チーム開発',
   personal: '個人開発',
+  internship: '長期インターン',
 };
 
 const Projects: React.FC = () => {

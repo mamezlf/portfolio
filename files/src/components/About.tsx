@@ -35,12 +35,10 @@ const About: React.FC = () => {
         <div className="about-grid">
           {/* Left: Bio */}
           <div className="about-bio">
-            <div className="bio-card" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '20px' }}>
-              <img
-                src="/my_img.JPG"
-                alt="Profile"
-                style={{ width: '100%', height: '248px', objectFit: 'cover', borderRadius: 'var(--radius)' }}
-              />
+            <div className="bio-card">
+              <div className="bio-avatar">
+                <span>ZLF</span>
+              </div>
               <div className="bio-meta">
                 <h3>Lingfang Zhang（張　齢方）</h3>
                 <p className="bio-role">Software Engineer in progress</p>
