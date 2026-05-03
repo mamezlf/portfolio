@@ -218,8 +218,8 @@ const Projects: React.FC = () => {
           <div className="lightbox-content" onClick={e => e.stopPropagation()}>
             <button className="lightbox-close" onClick={() => setPreviewState(null)}>×</button>
             {previewState.images.length > 1 && (
-              <button 
-                className="lightbox-nav prev" 
+              <button
+                className="lightbox-nav prev"
                 onClick={(e) => { e.stopPropagation(); setPreviewState({ ...previewState, index: (previewState.index - 1 + previewState.images.length) % previewState.images.length }); }}
               >
                 ‹
@@ -227,8 +227,8 @@ const Projects: React.FC = () => {
             )}
             <img src={previewState.images[previewState.index]} alt="Preview" />
             {previewState.images.length > 1 && (
-              <button 
-                className="lightbox-nav next" 
+              <button
+                className="lightbox-nav next"
                 onClick={(e) => { e.stopPropagation(); setPreviewState({ ...previewState, index: (previewState.index + 1) % previewState.images.length }); }}
               >
                 ›
