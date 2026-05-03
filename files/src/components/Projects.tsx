@@ -11,6 +11,7 @@ interface Project {
   highlights: string[];
   link?: string;
   noteLink?: string;
+  images?: string[];
   accentColor: string;
   emoji: string;
   type: 'origin' | 'team' | 'personal';
@@ -49,6 +50,17 @@ const projects: Project[] = [
       '4人チームでのGitHub運用（PR・マージ・コンフリクト解決）',
       'Docker（MySQL / Tomcat / Redis / PHP）で開発環境を統一',
     ],
+    images: [
+      '/wasecord/ログイン画面.png',
+      '/wasecord/アカウント作成画面.png',
+      '/wasecord/授業一覧とタグ選択.png',
+      '/wasecord/タグによってフィルタリング.png',
+      '/wasecord/グループチャット画面.png',
+      '/wasecord/DM画面.png',
+      '/wasecord/アカウント設定.png',
+      '/wasecord/使い方画面.png'
+    ],
+    link: '/wasecord/Group1A.pdf',
     accentColor: '#7ab3d4',
     emoji: '🎓',
     type: 'team',
@@ -64,7 +76,14 @@ const projects: Project[] = [
     highlights: [
       'メルカリリンクから商品情報を自動読み込み（推し機能）',
       '月次レポート・送料計算・資材管理など9モジュール',
-      '約2時間でプロトタイプ完成・実機動作確認済み',
+      '短時間でプロトタイプ完成・実機動作確認済み',
+    ],
+    images: [
+      '/URIAGE/IMG_0337.png',
+      '/URIAGE/IMG_0338.png',
+      '/URIAGE/IMG_0339.png',
+      '/URIAGE/IMG_0340.png',
+      '/URIAGE/IMG_0341.png'
     ],
     link: 'https://note.com/mamezlf/n/n775888ddc071',
     accentColor: '#d4a96a',
@@ -81,6 +100,7 @@ const typeLabel: Record<string, string> = {
 
 const Projects: React.FC = () => {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const [previewState, setPreviewState] = useState<{ images: string[]; index: number } | null>(null);
 
   const toggleExpand = (id: string) => {
     setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
@@ -152,6 +172,20 @@ const Projects: React.FC = () => {
                       </ul>
                     </div>
 
+                    {project.images && (
+                      <div className="project-images">
+                        {project.images.map((img, idx) => (
+                          <img
+                            key={idx}
+                            src={img}
+                            alt={`${project.name} screenshot ${idx + 1}`}
+                            className="project-thumbnail"
+                            onClick={() => setPreviewState({ images: project.images!, index: idx })}
+                          />
+                        ))}
+                      </div>
+                    )}
+
                     {project.link && (
                       <a
                         href={project.link}
@@ -159,7 +193,7 @@ const Projects: React.FC = () => {
                         rel="noopener noreferrer"
                         className="project-link"
                       >
-                        {project.id === 'uriage' ? 'note記事を読む →' : 'サイトを見る →'}
+                        {project.id === 'uriage' ? 'note記事を読む →' : project.id === 'wasecord' ? '説明資料を見る →' : 'サイトを見る →'}
                       </a>
                     )}
                   </div>
@@ -178,6 +212,31 @@ const Projects: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {previewState && (
+        <div className="lightbox" onClick={() => setPreviewState(null)}>
+          <div className="lightbox-content" onClick={e => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={() => setPreviewState(null)}>×</button>
+            {previewState.images.length > 1 && (
+              <button 
+                className="lightbox-nav prev" 
+                onClick={(e) => { e.stopPropagation(); setPreviewState({ ...previewState, index: (previewState.index - 1 + previewState.images.length) % previewState.images.length }); }}
+              >
+                ‹
+              </button>
+            )}
+            <img src={previewState.images[previewState.index]} alt="Preview" />
+            {previewState.images.length > 1 && (
+              <button 
+                className="lightbox-nav next" 
+                onClick={(e) => { e.stopPropagation(); setPreviewState({ ...previewState, index: (previewState.index + 1) % previewState.images.length }); }}
+              >
+                ›
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
