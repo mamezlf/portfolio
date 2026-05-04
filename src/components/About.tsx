@@ -130,7 +130,7 @@ const About: React.FC = () => {
                 </p>
                 <p className="research-sub">
                   <a
-                    href="/poster.pdf"
+                    href="poster.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: 'inherit', textDecoration: 'none', borderBottom: '1px solid currentColor', paddingBottom: '1px' }}

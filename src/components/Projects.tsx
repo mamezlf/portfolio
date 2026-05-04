@@ -51,16 +51,16 @@ const projects: Project[] = [
       'Docker（MySQL / Tomcat / Redis / PHP）で開発環境を統一',
     ],
     images: [
-      'public/wasecord/ログイン画面.png',
-      'public/wasecord/アカウント作成画面.png',
-      'public/wasecord/授業一覧とタグ選択.png',
-      'public/wasecord/タグによってフィルタリング.png',
-      'public/wasecord/グループチャット画面.png',
-      'public/wasecord/DM画面.png',
-      '/wasecord/アカウント設定.png',
-      '/wasecord/使い方画面.png'
+      'wasecord/ログイン画面.png',
+      'wasecord/アカウント作成画面.png',
+      'wasecord/授業一覧とタグ選択.png',
+      'wasecord/タグによってフィルタリング.png',
+      'wasecord/グループチャット画面.png',
+      'wasecord/DM画面.png',
+      'wasecord/アカウント設定.png',
+      'wasecord/使い方画面.png'
     ],
-    link: '/wasecord/Group1A.pdf',
+    link: 'wasecord/Group1A.pdf',
     accentColor: '#7ab3d4',
     emoji: '🎓',
     type: 'team',
@@ -96,11 +96,11 @@ const projects: Project[] = [
       '短時間でプロトタイプ完成・実機動作確認済み',
     ],
     images: [
-      'public/URIAGE/IMG_0337.png',
-      'public/URIAGE/IMG_0338.png',
-      'public/URIAGE/IMG_0339.png',
-      'public/URIAGE/IMG_0340.png',
-      'public/URIAGE/IMG_0341.png'
+      'URIAGE/IMG_0337.png',
+      'URIAGE/IMG_0338.png',
+      'URIAGE/IMG_0339.png',
+      'URIAGE/IMG_0340.png',
+      'URIAGE/IMG_0341.png'
     ],
     link: 'https://note.com/mamezlf/n/n775888ddc071',
     accentColor: '#d4a96a',
