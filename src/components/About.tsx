@@ -37,7 +37,7 @@ const About: React.FC = () => {
           <div className="about-bio">
             <div className="bio-card">
               <div className="bio-avatar">
-                <span>ZLF</span>
+                <span style={{ fontSize: '20px' }}>👩‍💻</span>
               </div>
               <div className="bio-meta">
                 <h3>Lingfang Zhang（張　齢方）</h3>
@@ -46,13 +46,13 @@ const About: React.FC = () => {
             </div>
 
             <p className="bio-text">
-              早稲田大学大学院で NLP・mLLM を研究しながら、日本の IT 中小企業で1年以上エンジニアとしてインターンをしています。
+              早稲田大学大学院で NLP・mLLM を研究しながら、日本の IT 企業で1年以上エンジニアとしてインターンをしています。
             </p>
 
             <p className="bio-text">
-              「この仕組みがあれば、もっと楽になる」という感覚が行動の原点。
-              課題を見つけたら、すぐ設計して、作って、使ってみる——
-              そのサイクルが好きです。
+              「この仕組みがあれば、もっと楽になる」という感覚が行動の原点。<br />
+              課題を見つけたら、すぐ設計して、作って、使ってみる——<br />
+              このサイクルが好きです。
             </p>
 
             <p className="bio-text accent-text">

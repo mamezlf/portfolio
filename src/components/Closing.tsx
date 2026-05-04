@@ -18,6 +18,12 @@ const Closing: React.FC = () => {
             採用担当者の方、エンジニアの方、ともにプロダクトを作りたい方——
             <br />
             お気軽にご連絡ください。
+            <br />
+            Email:
+            <a
+              href="mailto:mamezhlf@gmail.com"
+              style={{ color: 'inherit', textDecoration: 'none', paddingBottom: '1px' }}
+            > mamezhlf@gmail.com</a>
           </p>
 
           <div className="closing-links">
