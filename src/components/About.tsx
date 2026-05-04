@@ -37,7 +37,7 @@ const About: React.FC = () => {
           <div className="about-bio">
             <div className="bio-card">
               <div className="bio-avatar">
-                <span style={{ fontSize: '20px' }}>👩‍💻</span>
+                <img src={`${import.meta.env.BASE_URL}oriduru_yellow.svg`} alt="Avatar" style={{ width: '50%', height: '50%', objectFit: 'cover' }} />
               </div>
               <div className="bio-meta">
                 <h3>Lingfang Zhang（張　齢方）</h3>
@@ -50,7 +50,7 @@ const About: React.FC = () => {
             </p>
 
             <p className="bio-text">
-              「この仕組みがあれば、もっと楽になる」という感覚が行動の原点。<br />
+              「この仕組みがあれば、もっと楽になる」という感覚が行動の原点。
               課題を見つけたら、すぐ設計して、作って、使ってみる——<br />
               このサイクルが好きです。
             </p>
