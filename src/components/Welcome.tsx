@@ -20,28 +20,28 @@ const Welcome: React.FC = () => {
         </div>
 
         <h1 className="welcome-title fade-up" style={{ animationDelay: '0.25s' }}>
-          <span className="title-line">課題を見つけて、</span>
-          <span className="title-line title-accent">コードで解決する。</span>
+          <span className="title-line">繰り返される非効率を、</span>
+          <span className="title-line title-accent">仕組みで変える</span>
         </h1>
 
         <p className="welcome-sub fade-up" style={{ animationDelay: '0.45s' }}>
-          エンジニア × NLP研究 × ハンドメイド
+          エンジニア × NLP研究者
         </p>
 
         <div className="welcome-philosophy fade-up" style={{ animationDelay: '0.6s' }}>
           <span className="quote-mark">"</span>
           <p>
             この仕組みがあれば、もっと楽になる。<br />
-            <span className="philosophy-sub">——そう気づいたら、すぐ手を動かしたくなる。</span>
+            <span className="philosophy-sub">——小さな「ムダ」を減らし、核心に集中できるようにする。</span>
           </p>
         </div>
 
         <div className="welcome-actions fade-up" style={{ animationDelay: '0.75s' }}>
           <button className="btn-primary" onClick={() => scrollTo('projects')}>
-            ポートフォリオを見る
+            自己紹介
           </button>
           <button className="btn-ghost" onClick={() => scrollTo('about')}>
-            自己紹介
+            ポートフォリオ
           </button>
         </div>
 
