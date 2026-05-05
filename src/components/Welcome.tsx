@@ -38,10 +38,10 @@ const Welcome: React.FC = () => {
 
         <div className="welcome-actions fade-up" style={{ animationDelay: '0.75s' }}>
           <button className="btn-primary" onClick={() => scrollTo('projects')}>
-            自己紹介
+            ポートフォリオをみる
           </button>
           <button className="btn-ghost" onClick={() => scrollTo('about')}>
-            ポートフォリオ
+            自己紹介からみる
           </button>
         </div>
 

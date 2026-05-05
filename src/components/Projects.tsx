@@ -43,7 +43,28 @@ const projects: Project[] = [
     emoji: "📦",
     type: "personal",
   },
+
   {
+    id: "ccn",
+    period: "大学1年 / 2022",
+    name: "CCN Timestamp Web",
+    tagline: "エンジニアになりたいと思った、あの夜",
+    story:
+      "大学一年生のころ、K-POPダンスイベントの動画に登場したダンサーに沼落ちしました。推しの神シーン集めツールを C 言語で作って、プログラミングで手間を省ける体験から、コードを書く楽しさに目覚めました。\nその後、推しの神シーンを見返す際、動画を毎回探し直す手間という「ムダ」を発見しました。この「ムダ」に対し、HTML+CSSを独学しながら、神シーンを一覧管理・再利用できるWebサイトを構築しました。「ムダ」をコードで解消できた体験が、エンジニアを志す原点となりました。",
+    tags: ["HTML", "CSS", "JavaScript", "C"],
+    highlights: [
+      "ソフトウェアエンジニアを志した原点",
+      "推し活で発生した「ムダ」と向き合い、ツール化によってムダを省いた",
+      "新しく学んだ技術をそのまま実際の課題解決に活かした",
+      "個人の課題解決を、再利用可能な仕組みとして作り上げた",
+    ],
+    link: "https://mamezlf.github.io/lovepoem/index.html",
+    accentColor: "#c47ab3",
+    emoji: "🕊️",
+    type: "origin",
+  },
+
+    {
     id: "internship",
     period: "大学3年〜大学院 / 2024- ",
     name: "日本IT企業 長期インターン",
@@ -60,9 +81,10 @@ const projects: Project[] = [
     emoji: "🏢",
     type: "internship",
   },
+
   {
     id: "wasecord",
-    period: "大学2〜3年 / 2024",
+    period: "大学3年 / 2024",
     name: "Wasecord",
     tagline: "同じ授業で悩んでいる誰かと、つながれたら",
     story:
@@ -96,25 +118,6 @@ const projects: Project[] = [
     emoji: "🎓",
     type: "team",
   },
-  {
-    id: "ccn",
-    period: "大学1年 / 2022",
-    name: "CCN Timestamp Web",
-    tagline: "エンジニアになりたいと思った、あの夜",
-    story:
-      "大学一年生のころ、K-POPダンスイベントの動画に登場したダンサーに沼落ちしました。推しの神シーン集めツールを C 言語で作って、プログラミングで手間を省ける体験から、コードを書く楽しさに目覚めました。\nその後、推しの神シーンを見返す際、動画を毎回探し直す手間という「ムダ」を発見しました。この「ムダ」に対し、HTML+CSSを独学しながら、神シーンを一覧管理・再利用できるWebサイトを構築しました。「ムダ」をコードで解消できた体験が、エンジニアを志す原点となりました。",
-    tags: ["HTML", "CSS", "JavaScript", "C"],
-    highlights: [
-      "ソフトウェアエンジニアを志した原点",
-      "推し活で発生した「ムダ」と向き合い、ツール化によってムダを省いた",
-      "新しく学んだ技術をそのまま実際の課題解決に活かした",
-      "個人の課題解決を、再利用可能な仕組みとして作り上げた",
-    ],
-    link: "https://mamezlf.github.io/lovepoem/index.html",
-    accentColor: "#c47ab3",
-    emoji: "🕊️",
-    type: "origin",
-  },
 ];
 
 const typeLabel: Record<string, string> = {
@@ -140,12 +143,12 @@ const Projects: React.FC = () => {
       <div className="section-container">
         <div className="projects-header">
           <span className="section-label">Projects</span>
-          <h2 className="section-title">開発プロジェクト</h2>
+          <h2 className="section-title">開発経験</h2>
           <p className="projects-sub">
-            繰り返し発生する非効率を、仕組みで解決する——
+            繰り返し発生する非効率を、仕組みで変える——
             <br />
             日常の小さな「ムダ」に気づき、
-            それを仕組みに落とし込んできました。
+            それをなくす仕組みに落とし込んできました。
           </p>
         </div>
 
