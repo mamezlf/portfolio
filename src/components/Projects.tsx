@@ -253,7 +253,7 @@ const Projects: React.FC = () => {
                           ? "note記事を読む →"
                           : project.id === "wasecord"
                             ? "説明資料を見る →"
-                            : "サイトを見る →"}
+                            : "Webサイトを見る →"}
                       </a>
                     )}
                   </div>
