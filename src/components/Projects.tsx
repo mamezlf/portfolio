@@ -54,9 +54,9 @@ const projects: Project[] = [
     tags: ["HTML", "CSS", "JavaScript", "C"],
     highlights: [
       "ソフトウェアエンジニアを志した原点",
-      "推し活で発生した「ムダ」と向き合い、ツール化によってムダを省いた",
-      "新しく学んだ技術をそのまま実際の課題解決に活かした",
+      "推し活で発生した「ムダ」と向き合い、ツール化によってムダをなくした",
       "個人の課題解決を、再利用可能な仕組みとして作り上げた",
+      "新しく学んだ技術をそのまま実際の課題解決に活かした",
     ],
     link: "https://mamezlf.github.io/lovepoem/index.html",
     accentColor: "#c47ab3",
@@ -64,7 +64,7 @@ const projects: Project[] = [
     type: "origin",
   },
 
-    {
+  {
     id: "internship",
     period: "大学3年〜大学院 / 2024- ",
     name: "日本IT企業 長期インターン",
@@ -145,10 +145,9 @@ const Projects: React.FC = () => {
           <span className="section-label">Projects</span>
           <h2 className="section-title">開発経験</h2>
           <p className="projects-sub">
-            繰り返し発生する非効率を、仕組みで変える——
+            繰り返し発生する「ムダ」を見つけ、
             <br />
-            日常の小さな「ムダ」に気づき、
-            それをなくす仕組みに落とし込んできました。
+            それを解消することに取り組んでいます。
           </p>
         </div>
 
@@ -268,8 +267,9 @@ const Projects: React.FC = () => {
         <div className="projects-footer">
           <div className="philosophy-strip">
             <span className="philo-quote">
-              繰り返し発生する非効率を、仕組みに変える。 <br />
-              ——そんなプロジェクトを積み重ねてきた。
+              課題の特定から設計・実装・運用まで一貫して行い、
+              <br />
+              実際の利用を通じて改善を重ねています。
             </span>
           </div>
         </div>

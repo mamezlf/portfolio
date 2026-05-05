@@ -1,25 +1,24 @@
-import React from 'react';
-
+import React from "react";
 
 const languages = [
-  { lang: '日本語', level: 'N1 / ビジネス', color: '#7ec8a0' },
-  { lang: '英語', level: 'TOEIC 895 / TOEFL 91', color: '#7ab3d4' },
-  { lang: '中国語', level: 'ネイティブ', color: '#d4a96a' },
-  { lang: '韓国語', level: '日常会話', color: '#c47ab3' },
+  { lang: "日本語", level: "N1 / ビジネス", color: "#7ec8a0" },
+  { lang: "英語", level: "TOEIC 895 / TOEFL 91", color: "#7ab3d4" },
+  { lang: "中国語", level: "ネイティブ", color: "#d4a96a" },
+  { lang: "韓国語", level: "日常会話", color: "#c47ab3" },
 ];
 
 const techGroups = [
   {
-    label: 'Mobile / Frontend',
-    techs: ['Swift', 'SwiftUI', 'React', 'React Native', 'TypeScript', 'Expo'],
+    label: "Mobile / Frontend",
+    techs: ["Swift", "SwiftUI", "React", "React Native", "TypeScript", "Expo"],
   },
   {
-    label: 'Backend / Tools',
-    techs: ['Java', 'PHP', 'MySQL', 'Docker', 'GitHub', 'Figma'],
+    label: "Backend / Tools",
+    techs: ["Java", "PHP", "MySQL", "Docker", "GitHub", "Figma"],
   },
   {
-    label: 'AI / Research',
-    techs: ['mBERT', 'Transformer', 'PyTorch', 'NLP'],
+    label: "AI / Research",
+    techs: ["mBERT", "Transformer", "PyTorch", "NLP"],
   },
 ];
 
@@ -37,7 +36,11 @@ const About: React.FC = () => {
           <div className="about-bio">
             <div className="bio-card">
               <div className="bio-avatar">
-                <img src={`${import.meta.env.BASE_URL}oriduru_yellow.svg`} alt="Avatar" style={{ width: '50%', height: '50%', objectFit: 'cover' }} />
+                <img
+                  src={`${import.meta.env.BASE_URL}oriduru_yellow.svg`}
+                  alt="Avatar"
+                  style={{ width: "50%", height: "50%", objectFit: "cover" }}
+                />
               </div>
               <div className="bio-meta">
                 <h3>Lingfang Zhang（張 齢方）</h3>
@@ -46,13 +49,15 @@ const About: React.FC = () => {
             </div>
 
             <p className="bio-text">
-              早稲田大学大学院で NLP・mLLM を研究しながら、日本の IT 企業で1年以上エンジニアとしてインターンをしています。
+              早稲田大学大学院で NLP・mLLM
+              を研究しながら、日本のIT企業で1年以上、エンジニアとして新規事業と開発に携わっています。
             </p>
 
             <p className="bio-text">
               「この仕組みがあれば、もっと楽になる」という感覚が行動の原点。
-              課題を見つけたら、すぐ設計して、作って、使ってみる——<br />
-              このサイクルが好きです。
+              課題を見つけたら、すぐ設計して、作って、使ってみる——
+              <br />
+              このサイクルを繰り返しています。
             </p>
 
             <p className="bio-text accent-text">
@@ -83,7 +88,10 @@ const About: React.FC = () => {
           {/* Right: Skills */}
           <div className="about-skills">
             {/* Languages */}
-            <div className="skills-block" style={{ borderLeft: '2px solid var(--green)' }}>
+            <div
+              className="skills-block"
+              style={{ borderLeft: "2px solid var(--green)" }}
+            >
               <h4 className="skills-heading">言語</h4>
               <div className="lang-list">
                 {languages.map(({ lang, level, color }) => (
@@ -99,14 +107,19 @@ const About: React.FC = () => {
             </div>
 
             {/* Tech Stack */}
-            <div className="skills-block" style={{ borderLeft: '2px solid var(--accent)' }}>
+            <div
+              className="skills-block"
+              style={{ borderLeft: "2px solid var(--accent)" }}
+            >
               <h4 className="skills-heading">技術スタック</h4>
               {techGroups.map(({ label, techs }) => (
                 <div key={label} className="tech-group">
                   <span className="tech-group-label">{label}</span>
                   <div className="tech-tags">
-                    {techs.map(t => (
-                      <span key={t} className="tag">{t}</span>
+                    {techs.map((t) => (
+                      <span key={t} className="tag">
+                        {t}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -123,7 +136,11 @@ const About: React.FC = () => {
                     href="https://www.jstage.jst.go.jp/article/pjsai/JSAI2025/0/JSAI2025_1Win435/_pdf/-char/en"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ color: 'inherit', textDecoration: 'none', paddingBottom: '1px' }}
+                    style={{
+                      color: "inherit",
+                      textDecoration: "none",
+                      paddingBottom: "1px",
+                    }}
                   >
                     mBERT を用いた逐次多言語学習
                   </a>
@@ -133,7 +150,12 @@ const About: React.FC = () => {
                     href="poster.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ color: 'inherit', textDecoration: 'none', borderBottom: '1px solid currentColor', paddingBottom: '1px' }}
+                    style={{
+                      color: "inherit",
+                      textDecoration: "none",
+                      borderBottom: "1px solid currentColor",
+                      paddingBottom: "1px",
+                    }}
                   >
                     JSAI2025 発表ポスター
                   </a>

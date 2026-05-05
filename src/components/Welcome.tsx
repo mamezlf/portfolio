@@ -1,9 +1,8 @@
-import React from 'react';
-
+import React from "react";
 
 const Welcome: React.FC = () => {
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -14,38 +13,56 @@ const Welcome: React.FC = () => {
       <div className="blob blob-3" />
 
       <div className="welcome-content section-container">
-        <div className="welcome-eyebrow fade-up" style={{ animationDelay: '0.1s' }}>
+        <div
+          className="welcome-eyebrow fade-up"
+          style={{ animationDelay: "0.1s" }}
+        >
           <span className="dot" />
           <span>早稲田大学大学院 情報理工・情報通信専攻</span>
         </div>
 
-        <h1 className="welcome-title fade-up" style={{ animationDelay: '0.25s' }}>
+        <h1
+          className="welcome-title fade-up"
+          style={{ animationDelay: "0.25s" }}
+        >
           <span className="title-line">繰り返される非効率を、</span>
           <span className="title-line title-accent">仕組みで変える</span>
         </h1>
 
-        <p className="welcome-sub fade-up" style={{ animationDelay: '0.45s' }}>
+        <p className="welcome-sub fade-up" style={{ animationDelay: "0.45s" }}>
           エンジニア × NLP研究者
         </p>
 
-        <div className="welcome-philosophy fade-up" style={{ animationDelay: '0.6s' }}>
+        <div
+          className="welcome-philosophy fade-up"
+          style={{ animationDelay: "0.6s" }}
+        >
           <span className="quote-mark">"</span>
           <p>
-            この仕組みがあれば、もっと楽になる。<br />
-            <span className="philosophy-sub">小さな「ムダ」を減らし、核心に集中できるようにする。</span>
+            この仕組みがあれば、もっと楽になる。
+            <br />
+            <span className="philosophy-sub">
+              小さな「ムダ」を減らし、核心に集中できるようにする。
+            </span>
           </p>
         </div>
 
-        <div className="welcome-actions fade-up" style={{ animationDelay: '0.75s' }}>
-          <button className="btn-primary" onClick={() => scrollTo('projects')}>
-            ポートフォリオをみる
+        <div
+          className="welcome-actions fade-up"
+          style={{ animationDelay: "0.75s" }}
+        >
+          <button className="btn-primary" onClick={() => scrollTo("about")}>
+            自己紹介をみる
           </button>
-          <button className="btn-ghost" onClick={() => scrollTo('about')}>
-            自己紹介からみる
+          <button className="btn-ghost" onClick={() => scrollTo("projects")}>
+            経歴からみる
           </button>
         </div>
 
-        <div className="welcome-scroll fade-up" style={{ animationDelay: '1s' }}>
+        <div
+          className="welcome-scroll fade-up"
+          style={{ animationDelay: "1s" }}
+        >
           <div className="scroll-line" />
           <span>scroll</span>
         </div>
