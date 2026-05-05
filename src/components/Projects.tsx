@@ -47,8 +47,8 @@ const projects: Project[] = [
   {
     id: "ccn",
     period: "大学1年 / 2022",
-    name: "CCN Timestamp Web",
-    tagline: "エンジニアになりたいと思った、あの夜",
+    name: "LovePoem",
+    tagline: "手間をコードで減らした初体験。エンジニアになりたいと思った、あの夜——",
     story:
       "大学一年生のころ、K-POPダンスイベントの動画に登場したダンサーに沼落ちしました。推しの神シーン集めツールを C 言語で作って、プログラミングで手間を省ける体験から、コードを書く楽しさに目覚めました。\nその後、推しの神シーンを見返す際、動画を毎回探し直す手間という「ムダ」を発見しました。この「ムダ」に対し、HTML+CSSを独学しながら、神シーンを一覧管理・再利用できるWebサイトを構築しました。「ムダ」をコードで解消できた体験が、エンジニアを志す原点となりました。",
     tags: ["HTML", "CSS", "JavaScript", "C"],
@@ -189,7 +189,7 @@ const Projects: React.FC = () => {
                     </span>
                   </div>
                   <h3 className="project-name">{project.name}</h3>
-                  <p className="project-tagline">{project.tagline}</p>
+                  <p className="project-tagline" style={{ whiteSpace: "pre-wrap" }}>{project.tagline}</p>
                   <div className="project-tags">
                     {project.tags.map((t) => (
                       <span key={t} className="tag">
@@ -206,7 +206,7 @@ const Projects: React.FC = () => {
                   <div className="project-detail">
                     <div className="detail-divider" />
 
-                    <p className="project-story">{project.story}</p>
+                    <p className="project-story" style={{ whiteSpace: "pre-wrap" }}>{project.story}</p>
 
                     <div className="project-highlights">
                       <h4>ポイント</h4>
