@@ -16,7 +16,7 @@ const Welcome: React.FC = () => {
       <div className="welcome-content section-container">
         <div className="welcome-eyebrow fade-up" style={{ animationDelay: '0.1s' }}>
           <span className="dot" />
-          <span>早稲田大学 大学院 情報工学専攻</span>
+          <span>早稲田大学大学院 情報理工・情報通信専攻</span>
         </div>
 
         <h1 className="welcome-title fade-up" style={{ animationDelay: '0.25s' }}>
@@ -25,7 +25,7 @@ const Welcome: React.FC = () => {
         </h1>
 
         <p className="welcome-sub fade-up" style={{ animationDelay: '0.45s' }}>
-          エンジニア × NLP研究 × ハンドメイド好き
+          エンジニア × NLP研究 × ハンドメイド
         </p>
 
         <div className="welcome-philosophy fade-up" style={{ animationDelay: '0.6s' }}>

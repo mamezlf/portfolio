@@ -40,7 +40,7 @@ const About: React.FC = () => {
                 <img src={`${import.meta.env.BASE_URL}oriduru_yellow.svg`} alt="Avatar" style={{ width: '50%', height: '50%', objectFit: 'cover' }} />
               </div>
               <div className="bio-meta">
-                <h3>Lingfang Zhang（張　齢方）</h3>
+                <h3>Lingfang Zhang（張 齢方）</h3>
                 <p className="bio-role">Software Engineer in progress</p>
               </div>
             </div>
