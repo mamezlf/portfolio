@@ -19,7 +19,7 @@ const techGroups = [
   },
   {
     label: 'AI / Research',
-    techs: ['mBERT', 'Transformer', 'PyTorch', 'NLP', 'Vibe Coding'],
+    techs: ['mBERT', 'Transformer', 'PyTorch', 'NLP'],
   },
 ];
 

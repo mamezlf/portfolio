@@ -32,7 +32,7 @@ const Welcome: React.FC = () => {
           <span className="quote-mark">"</span>
           <p>
             この仕組みがあれば、もっと楽になる。<br />
-            <span className="philosophy-sub">——小さな「ムダ」を減らし、核心に集中できるようにする。</span>
+            <span className="philosophy-sub">小さな「ムダ」を減らし、核心に集中できるようにする。</span>
           </p>
         </div>
 
