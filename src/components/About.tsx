@@ -49,7 +49,7 @@ const About: React.FC = () => {
             </div>
 
             <p className="bio-text">
-              早稲田大学大学院で NLP・mLLM
+              早稲田大学大学院で 自然言語処理・多言語モデル
               を研究しながら、日本のIT企業で1年以上、エンジニアとして新規事業と開発に携わっています。
             </p>
 
@@ -146,6 +146,20 @@ const About: React.FC = () => {
                   </a>
                 </p>
                 <p className="research-sub">
+                  <a
+                    href="research.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: "inherit",
+                      textDecoration: "none",
+                      borderBottom: "1px solid currentColor",
+                      paddingBottom: "1px",
+                    }}
+                  >
+                    説明資料
+                  </a>
+                  ・
                   <a
                     href="poster.pdf"
                     target="_blank"
