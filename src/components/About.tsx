@@ -1,7 +1,7 @@
 import React from "react";
 
 const languages = [
-  { lang: "日本語", level: "N1 / ビジネス", color: "#7ec8a0" },
+  { lang: "日本語", level: "N1(満点) / ビジネス", color: "#7ec8a0" },
   { lang: "英語", level: "TOEIC 895 / TOEFL 91", color: "#7ab3d4" },
   { lang: "中国語", level: "ネイティブ", color: "#d4a96a" },
   { lang: "韓国語", level: "日常会話", color: "#c47ab3" },
@@ -49,19 +49,16 @@ const About: React.FC = () => {
             </div>
 
             <p className="bio-text">
-              早稲田大学大学院で 自然言語処理・多言語モデル
-              を研究しながら、日本のIT企業で1年以上、エンジニアとして新規事業と開発に携わっています。
+              早稲田大学大学院で自然言語処理・多言語モデルの研究をしながら、エンジニアとしてプロダクト開発や、日本のIT企業で新規事業に携わっています。
             </p>
 
             <p className="bio-text">
-              「この仕組みがあれば、もっと楽になる」という感覚が行動の原点。
-              課題を見つけたら、すぐ設計して、作って、使ってみる——
-              <br />
-              このサイクルを繰り返しています。
+              私にとって、「この仕組みがあれば、もっと楽になる」という感覚が行動の原点です。
+              課題に対する解決策を見つけたら、すぐ形にして試してみるようにしています。
             </p>
 
             <p className="bio-text accent-text">
-              作ったものが誰かの役に立つ瞬間が、一番のやりがいです。
+              作ったものが価値を生み出す瞬間が、一番のやりがいです。
             </p>
 
             <div className="bio-info-row">
