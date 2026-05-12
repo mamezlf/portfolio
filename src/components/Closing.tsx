@@ -59,7 +59,7 @@ const Closing: React.FC = () => {
             <div className="footer-row">
               <span className="footer-name">Lingfang Zhang</span>
               <span className="footer-copy">
-                早稲田大学大学院 · SWE / NLP · 28卒
+                早大院 · SWE / NLP · 28卒
               </span>
             </div>
           </div>
