@@ -26,11 +26,11 @@ const techGroups = [
   },
   {
     label: "Tools / Collaboration",
-    techs: ["GitHub", "Figma", "Jira", "Notion"],
+    techs: ["Claude", "Codex", "Antigravity", "Figma", "Jira", "Notion"],
   },
   {
     label: "AI / Research",
-    techs: ["PyTorch", "Transformer", "mBERT", "NLP"],
+    techs: ["PyTorch", "Transformer", "NLP"],
   },
 ];
 
@@ -102,18 +102,40 @@ const About: React.FC = () => {
               style={{ borderLeft: "2px solid var(--green)" }}
             >
               <h4 className="skills-heading">技術スタック</h4>
-              {techGroups.map(({ label, techs }) => (
-                <div key={label} className="tech-group">
-                  <span className="tech-group-label">{label}</span>
-                  <div className="tech-tags">
-                    {techs.map((t) => (
-                      <span key={t} className="tag">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
+
+              {/* Core Stack */}
+              <div style={{ marginBottom: "20px" }}>
+                <span className="tech-group-label" style={{ display: "block", marginBottom: "10px" }}>Core Stack</span>
+                <div className="tech-tags">
+                  {["TypeScript", "React", "React Native", "Expo"].map((t) => (
+                    <span key={t} className="tag" >
+                      {t}
+                    </span>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Compact Stack */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                {techGroups.map(({ label, techs }) => {
+                  const coreSet = new Set(["React", "React Native", "TypeScript", "Expo"]);
+                  const remaining = techs.filter(t => !coreSet.has(t));
+                  if (remaining.length === 0) return null;
+
+                  return (
+                    <div key={label} style={{ display: "flex", alignItems: "baseline", gap: "16px" }}>
+                      <span className="tech-group-label" style={{ display: "block", width: "120px", flexShrink: 0, margin: 0 }}>{label}</span>
+                      <div className="tech-tags" style={{ gap: "6px" }}>
+                        {remaining.map((t) => (
+                          <span key={t} className="tag" style={{ background: "transparent" }}>
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             {/* Languages */}
             <div
