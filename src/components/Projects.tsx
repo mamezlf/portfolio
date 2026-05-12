@@ -132,7 +132,7 @@ const typeLabel: Record<string, string> = {
   origin: "原点",
   team: "チーム開発",
   personal: "個人開発",
-  internship: "長期インターン",
+  internship: "インターン",
 };
 
 const Projects: React.FC = () => {
