@@ -504,6 +504,12 @@ h3 {
   flex-shrink: 0;
 }
 
+.lang-info{
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  align-items: center;
+}
+
 .lang-name {
   display: block;
   font-size: 14px;
