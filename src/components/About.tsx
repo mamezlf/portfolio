@@ -9,16 +9,28 @@ const languages = [
 
 const techGroups = [
   {
-    label: "Mobile / Frontend",
-    techs: ["Swift", "SwiftUI", "React", "React Native", "TypeScript", "Expo"],
+    label: "Frontend / Mobile",
+    techs: [
+      "Swift",
+      "SwiftUI",
+      "React",
+      "Next.js",
+      "React Native",
+      "TypeScript",
+      "Expo",
+    ],
   },
   {
-    label: "Backend / Tools",
-    techs: ["Java", "PHP", "MySQL", "Docker", "GitHub", "Figma"],
+    label: "Backend / Infrastructure",
+    techs: ["Java", "Spring", "PHP", "PostgreSQL", "MySQL", "Docker"],
+  },
+  {
+    label: "Tools / Collaboration",
+    techs: ["GitHub", "Figma", "Jira", "Notion"],
   },
   {
     label: "AI / Research",
-    techs: ["mBERT", "Transformer", "PyTorch", "NLP"],
+    techs: ["PyTorch", "Transformer", "mBERT", "NLP"],
   },
 ];
 
