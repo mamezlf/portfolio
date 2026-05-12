@@ -1,9 +1,9 @@
 import React from "react";
 
 const languages = [
+  { lang: "中国語", level: "ネイティブ", color: "#d4a96a" },
   { lang: "日本語", level: "N1(満点) / ビジネス", color: "#7ec8a0" },
   { lang: "英語", level: "TOEIC 895 / TOEFL 91", color: "#7ab3d4" },
-  { lang: "中国語", level: "ネイティブ", color: "#d4a96a" },
   { lang: "韓国語", level: "日常会話", color: "#c47ab3" },
 ];
 
@@ -84,29 +84,10 @@ const About: React.FC = () => {
 
           {/* Right: Skills */}
           <div className="about-skills">
-            {/* Languages */}
-            <div
-              className="skills-block"
-              style={{ borderLeft: "2px solid var(--green)" }}
-            >
-              <h4 className="skills-heading">言語</h4>
-              <div className="lang-list">
-                {languages.map(({ lang, level, color }) => (
-                  <div key={lang} className="lang-item">
-                    <div className="lang-dot" style={{ background: color }} />
-                    <div>
-                      <span className="lang-name">{lang}</span>
-                      <span className="lang-level">{level}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* Tech Stack */}
             <div
               className="skills-block"
-              style={{ borderLeft: "2px solid var(--accent)" }}
+              style={{ borderLeft: "2px solid var(--green)" }}
             >
               <h4 className="skills-heading">技術スタック</h4>
               {techGroups.map(({ label, techs }) => (
@@ -121,6 +102,24 @@ const About: React.FC = () => {
                   </div>
                 </div>
               ))}
+            </div>
+            {/* Languages */}
+            <div
+              className="skills-block"
+              style={{ borderLeft: "2px solid var(--accent)" }}
+            >
+              <h4 className="skills-heading">言語</h4>
+              <div className="lang-list">
+                {languages.map(({ lang, level, color }) => (
+                  <div key={lang} className="lang-item">
+                    <div className="lang-dot" style={{ background: color }} />
+                    <div>
+                      <span className="lang-name">{lang}</span>
+                      <span className="lang-level">{level}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Research */}
