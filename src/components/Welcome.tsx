@@ -39,12 +39,10 @@ const Welcome: React.FC = () => {
         >
           <span className="quote-mark">"</span>
           <p>
-            「この仕組みがあれば、もっと楽になる」
+            「ユーザーとして感じた違和感」
             <br />
             <span className="philosophy-sub">
-              という感覚を大切に、不確実な状況でも課題を見極め、
-              {/* <br /> */}
-              軌道修正を重ねながら形にするまで突き進みます
+              という感覚を起点に、手を動かして形にしてきました
             </span>
           </p>
         </div>

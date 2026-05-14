@@ -504,7 +504,7 @@ h3 {
   flex-shrink: 0;
 }
 
-.lang-info{
+.lang-info {
   display: grid;
   grid-template-columns: 60px 1fr;
   align-items: center;
@@ -601,6 +601,7 @@ h3 {
   color: var(--text-muted);
   margin-bottom: 60px;
   font-style: italic;
+  white-space: pre-wrap;
 }
 
 .timeline {
@@ -811,6 +812,7 @@ h3 {
   color: var(--text-secondary);
   font-weight: 300;
   font-style: italic;
+  white-space: pre-wrap;
 }
 
 /* ===== CLOSING ===== */
