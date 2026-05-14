@@ -25,12 +25,12 @@ const Welcome: React.FC = () => {
           className="welcome-title fade-up"
           style={{ animationDelay: "0.25s" }}
         >
-          <span className="title-line">繰り返されるムダを、</span>
-          <span className="title-line title-accent">仕組みで変える</span>
+          <span className="title-line">答えのない場所で、</span>
+          <span className="title-line title-accent">問いを立てて動き出す</span>
         </h1>
 
         <p className="welcome-sub fade-up" style={{ animationDelay: "0.45s" }}>
-          エンジニア × NLP研究者 × ハンドメイド作家
+          Software Engineer / NLP Researcher
         </p>
 
         <div
@@ -42,7 +42,9 @@ const Welcome: React.FC = () => {
             「この仕組みがあれば、もっと楽になる」
             <br />
             <span className="philosophy-sub">
-              という感覚を大切に、課題を発見したらすぐに動きます
+              という感覚を大切に、不確実な状況でも課題を見極め、
+              {/* <br /> */}
+              軌道修正を重ねながら形にするまで突き進みます
             </span>
           </p>
         </div>
