@@ -24,7 +24,14 @@ const projects: Project[] = [
     tagline: "個人販売者の収支管理を、アプリで一元化",
     story:
       "私はハンドメイドが趣味で、作った作品をフリマアプリで販売している中、利益を把握するのに毎回手動で売上から送料や資材費などを差し引く計算を行う必要がある「ムダ」に気づいた。このムダを課題として捉え、解決するために 売上と経費の記録・利益自動計算・商品別収支一覧 などの機能を備えたiOSアプリを開発した。日常生活で利用しながら改善を重ね、繰り返し発生する計算作業を効率化した。",
-    tags: ["Swift", "SwiftUI", "SwiftData", "Vibe Coding", "iOS"],
+    tags: [
+      "Swift",
+      "SwiftUI",
+      "SwiftData",
+      "Agentic Development",
+      "Vibe Coding",
+      "iOS",
+    ],
     highlights: [
       "送料・資材費を含めた収支を一元管理し、利益の可視化を実現",
       "月次レポート機能により、販売活動の振り返りを効率化",
@@ -51,7 +58,7 @@ const projects: Project[] = [
     name: "KNTY24 (KINTAI)",
     tagline: "開発を早く進める仕組みを、未経験チームの中で整備",
     story:
-      "インターンのプログラムで、社内向け勤怠管理アプリを4人チームでアジャイル開発によって構築した。\nReact Native＋TypeScriptを用い、5回のスプリントを通して、要件定義から設計・実装・テスト・レビューまで一貫して行った。\n私はエンジニアとして実装を担う一方、進捗管理やタスク分配、顧客への要件確認も主体的に引き受け、実質 PM の役割を果たした。また、PRルールやコーディング規約、フォーマッターを整備し、レビュー品質の向上に貢献した。さらに、非同期ワークで作業するメンバー間で状況を共有できるよう、Slackのログチャンネル運用を提案・導入し、チームの開発速度の向上を果たした。結果として、私たちは「開発スピードが速く、プロダクトの品質も高い」チームと評価を受けた。",
+      "長期インターンで、社内向け勤怠管理アプリを4人チームでアジャイル開発によって構築した。\nReact Native＋TypeScriptを用い、5回のスプリントを通して、要件定義から設計・実装・テスト・レビューまで一貫して行った。\n私はエンジニアとして実装を担う一方、進捗管理やタスク分配、顧客への要件確認も主体的に引き受け、実質 PM の役割を果たした。また、PRルールやコーディング規約、フォーマッターを整備し、レビュー品質の向上に貢献した。さらに、非同期ワークで作業するメンバー間で状況を共有できるよう、Slackのログチャンネル運用を提案・導入し、チームの開発速度の向上を果たした。結果として、私たちは「開発スピードが速く、プロダクトの品質も高い」チームと評価を受けた。",
     tags: [
       "React Native",
       "TypeScript",
@@ -104,7 +111,7 @@ const projects: Project[] = [
     id: "bridgeapp",
     period: "大学4年 / 2025.10 - 2026.3",
     name: "BRIDGEAPP",
-    tagline: "「なぜ作るか」から考えた、初めての上流工程Ω",
+    tagline: "「なぜ作るか」から考えた、初めての上流工程",
     story:
       "IT就職を目指す学生と、即戦力を求める中小企業をつなぐマッチングプラットフォームの設計を担当した。上流工程（要件定義・基本設計・詳細設計）は完全に未経験。「何を作るか」より「なぜ作るか」を先に考え抜くことを求められた初めてのプロジェクトだった。\n市場の既存サービスは履歴書と数回の面接だけで判断するため、学生・企業双方にミスマッチが多い。自社研修を通じて得た学生の行動データと特性情報を活かした、新しいマッチングの設計を目指した。\nLean Canvasでビジネスモデルを整理し、学生・企業それぞれのユーザーフロー（能動・受動）を設計。Atomic Designの考え方で画面を分解しながら、33画面・8機能群の設計稿を完成させた。自分が離脱した後も、設計材料はチームの基盤資産として継続活用されている。",
     tags: [
@@ -192,6 +199,13 @@ const typeLabel: Record<string, string> = {
   internship: "インターン",
 };
 
+const contentText = {
+  projectsSub:
+    "「何を作るか」より先に「なぜ作るか」を考え、情報が不完全でも決断を下し、動き出してきました。",
+  philoQuote:
+    "自分が感じた課題から動き出し、まず形にして、使いながら直します。",
+};
+
 const Projects: React.FC = () => {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [previewState, setPreviewState] = useState<{
@@ -209,11 +223,7 @@ const Projects: React.FC = () => {
         <div className="projects-header">
           <span className="section-label">Projects</span>
           <h2 className="section-title">開発経験</h2>
-          <p className="projects-sub">
-            繰り返し発生する「ムダ」を見つけ、
-            <br />
-            それを解消することに取り組んできました。
-          </p>
+          <p className="projects-sub">{contentText.projectsSub}</p>
         </div>
 
         {/* Timeline */}
@@ -341,9 +351,7 @@ const Projects: React.FC = () => {
         {/* Bottom philosophy */}
         <div className="projects-footer">
           <div className="philosophy-strip">
-            <span className="philo-quote">
-              これらの経験はすべて、答えのない状況から始まっています。
-            </span>
+            <span className="philo-quote">{contentText.philoQuote}</span>
           </div>
         </div>
       </div>
