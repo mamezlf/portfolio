@@ -26,7 +26,7 @@ const Welcome: React.FC = () => {
           style={{ animationDelay: "0.25s" }}
         >
           <span className="title-line">身の回りの違和感を、</span>
-          <span className="title-line title-accent">仕組みで解消する</span>
+          <span className="title-line title-accent">エンジニアリングで解消する</span>
         </h1>
 
         <p className="welcome-sub fade-up" style={{ animationDelay: "0.45s" }}>

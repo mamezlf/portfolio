@@ -56,7 +56,7 @@ const About: React.FC = () => {
               </div>
               <div className="bio-meta">
                 <h3>Lingfang Zhang（張 齢方）</h3>
-                <p className="bio-role">Software Engineer in progress</p>
+                <p className="bio-role">Software Engineer / NLP Researcher</p>
               </div>
             </div>
 
@@ -66,7 +66,7 @@ const About: React.FC = () => {
 
             <p className="bio-text">
               私は「現場や日々の暮らしで感じた違和感」を、そのまま課題として持ち込みます。
-              チームの一員として、社会に暮らす人間として、私たちにいますぐにできることはないかについて考えるのが好きです。
+              チームの一員として、社会に暮らす人間として、「私たちにいますぐにできることはないか」について考えるのが好きです。
               <br />
               アイデアが浮かんだら、すぐ行動に移し、試行錯誤を繰り返しながら形にしていきます。そして——
             </p>
