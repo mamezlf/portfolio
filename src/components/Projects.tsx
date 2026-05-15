@@ -1,4 +1,11 @@
 import React, { useState } from "react";
+import {
+  Package,
+  Briefcase,
+  BookMarked,
+  Link as LinkIcon,
+  Heart,
+} from "lucide-react";
 
 interface Project {
   id: string;
@@ -71,7 +78,7 @@ const projects: Project[] = [
     emoji: "🏢",
     type: "internship",
   },
-    {
+  {
     id: "curriculum",
     period: "大学4年 / 2025.3 - 2025.10",
     name: "CURRICULUM",
@@ -186,6 +193,18 @@ const typeLabel: Record<string, string> = {
   internship: "インターン",
 };
 
+const getProjectIcon = (projectId: string) => {
+  const iconMap: Record<string, React.ReactNode> = {
+    uriage: <Package size={22} />,
+    kintai: <Briefcase size={22} />,
+    curriculum: <BookMarked size={22} />,
+    bridgeapp: <LinkIcon size={22} />,
+    ccn: <Heart size={22} />,
+    wasecord: <Briefcase size={22} />,
+  };
+  return iconMap[projectId] || <Package size={22} />;
+};
+
 const Projects: React.FC = () => {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [previewState, setPreviewState] = useState<{
@@ -221,9 +240,10 @@ const Projects: React.FC = () => {
                   style={{
                     borderColor: project.accentColor,
                     background: `${project.accentColor}20`,
+                    color: project.accentColor,
                   }}
                 >
-                  <span>{project.emoji}</span>
+                  {getProjectIcon(project.id)}
                 </div>
                 {i < projects.length - 1 && <div className="timeline-line" />}
               </div>

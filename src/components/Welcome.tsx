@@ -1,4 +1,5 @@
 import React from "react";
+import { ChevronDown } from "lucide-react";
 
 const Welcome: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -7,36 +8,26 @@ const Welcome: React.FC = () => {
 
   return (
     <div className="welcome">
-      {/* Ambient background blobs */}
       <div className="blob blob-1" />
       <div className="blob blob-2" />
       <div className="blob blob-3" />
 
       <div className="welcome-content section-container">
-        <div
-          className="welcome-eyebrow fade-up"
-          style={{ animationDelay: "0.1s" }}
-        >
+        <div className="welcome-eyebrow">
           <span className="dot" />
           <span>早稲田大学大学院 情報理工・情報通信専攻</span>
         </div>
 
-        <h1
-          className="welcome-title fade-up"
-          style={{ animationDelay: "0.25s" }}
-        >
+        <h1 className="welcome-title">
           <span className="title-line">身の回りの違和感を、</span>
-          <span className="title-line title-accent">エンジニアリングで解消する</span>
+          <span className="title-line title-accent">
+            エンジニアリングで解消する
+          </span>
         </h1>
 
-        <p className="welcome-sub fade-up" style={{ animationDelay: "0.45s" }}>
-          ソフトウェアエンジニア / NLP 研究者
-        </p>
+        <p className="welcome-sub">ソフトウェアエンジニア / NLP 研究者</p>
 
-        <div
-          className="welcome-philosophy fade-up"
-          style={{ animationDelay: "0.6s" }}
-        >
+        <div className="welcome-philosophy">
           <span className="quote-mark">"</span>
           <p>
             「現場や日々の暮らしで感じた違和感」
@@ -47,10 +38,7 @@ const Welcome: React.FC = () => {
           </p>
         </div>
 
-        <div
-          className="welcome-actions fade-up"
-          style={{ animationDelay: "0.75s" }}
-        >
+        <div className="welcome-actions">
           <button className="btn-primary" onClick={() => scrollTo("about")}>
             自己紹介をみる
           </button>
@@ -59,12 +47,9 @@ const Welcome: React.FC = () => {
           </button>
         </div>
 
-        <div
-          className="welcome-scroll fade-up"
-          style={{ animationDelay: "1s" }}
-        >
+        <div className="welcome-scroll">
           <div className="scroll-line" />
-          <span>scroll</span>
+          <ChevronDown size={16} strokeWidth={1.5} />
         </div>
       </div>
     </div>

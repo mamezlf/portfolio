@@ -1,4 +1,5 @@
 import React from "react";
+import { BookOpen } from "lucide-react";
 
 const languages = [
   { lang: "中国語", level: "ネイティブ", color: "#d4a96a" },
@@ -99,10 +100,7 @@ const About: React.FC = () => {
           {/* Right: Skills */}
           <div className="about-skills">
             {/* Tech Stack */}
-            <div
-              className="skills-block"
-              style={{ borderLeft: "2px solid var(--green)" }}
-            >
+            <div className="skills-block">
               <h4 className="skills-heading">技術スタック</h4>
 
               {/* Core Stack */}
@@ -177,10 +175,7 @@ const About: React.FC = () => {
               </div>
             </div>
             {/* Languages */}
-            <div
-              className="skills-block"
-              style={{ borderLeft: "2px solid var(--accent)" }}
-            >
+            <div className="skills-block">
               <h4 className="skills-heading">言語</h4>
               <div className="lang-list">
                 {languages.map(({ lang, level, color }) => (
@@ -197,7 +192,7 @@ const About: React.FC = () => {
 
             {/* Research */}
             <div className="research-card">
-              <div className="research-icon">🔬</div>
+              <BookOpen size={24} className="research-icon" />
               <div>
                 <h4>研究テーマ</h4>
                 <p>

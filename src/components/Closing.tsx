@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React from "react";
+import { FileText, GitBranch } from "lucide-react";
 
 const Closing: React.FC = () => {
   return (
@@ -10,7 +10,8 @@ const Closing: React.FC = () => {
           <span className="section-label">Contact</span>
 
           <h2 className="closing-title">
-            一緒に、<br />
+            一緒に、
+            <br />
             <span className="closing-accent">何かを作りませんか。</span>
           </h2>
 
@@ -22,8 +23,15 @@ const Closing: React.FC = () => {
             Email:
             <a
               href="mailto:mamezhlf@gmail.com"
-              style={{ color: 'inherit', textDecoration: 'none', paddingBottom: '1px' }}
-            > mamezhlf@gmail.com</a>
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+                paddingBottom: "1px",
+              }}
+            >
+              {" "}
+              mamezhlf@gmail.com
+            </a>
           </p>
 
           <div className="closing-links">
@@ -33,7 +41,7 @@ const Closing: React.FC = () => {
               rel="noopener noreferrer"
               className="closing-link note"
             >
-              <span className="link-icon">📝</span>
+              <FileText size={24} className="link-icon" />
               <div>
                 <span className="link-label">note</span>
                 <span className="link-handle">@mamezlf</span>
@@ -46,7 +54,7 @@ const Closing: React.FC = () => {
               rel="noopener noreferrer"
               className="closing-link github"
             >
-              <span className="link-icon">⌨️</span>
+              <GitBranch size={24} className="link-icon" />
               <div>
                 <span className="link-label">GitHub</span>
                 <span className="link-handle">mamezlf</span>
@@ -58,9 +66,7 @@ const Closing: React.FC = () => {
             <div className="footer-divider" />
             <div className="footer-row">
               <span className="footer-name">Lingfang Zhang</span>
-              <span className="footer-copy">
-                早大院 · SWE / NLP · 28卒
-              </span>
+              <span className="footer-copy">早大院 · SWE / NLP · 28卒</span>
             </div>
           </div>
         </div>
