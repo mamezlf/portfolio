@@ -56,17 +56,19 @@ const About: React.FC = () => {
               </div>
               <div className="bio-meta">
                 <h3>Lingfang Zhang（張 齢方）</h3>
-                <p className="bio-role">Software Engineer in progress</p>
+                <p className="bio-role">Software Engineer / NLP Researcher</p>
               </div>
             </div>
 
             <p className="bio-text">
-              早稲田大学大学院で自然言語処理・多言語モデルの研究をしながら、エンジニアとしてプロダクト開発や、日本のIT企業で新規事業に携わっています。
+              早稲田大学大学院で自然言語処理・多言語モデルの研究をしながら、エンジニアとしてプロダクト開発や、日本のIT企業で新規事業開発に携わっています。
             </p>
 
             <p className="bio-text">
-              私にとって、「この仕組みがあれば、もっと楽になる」という感覚が行動の原点です。
-              課題に対する解決策を見つけたら、すぐ形にして試してみるようにしています。
+              私は「現場や日々の暮らしで感じた違和感」を、そのまま課題として持ち込みます。
+              チームの一員として、社会に暮らす人間として、「私たちにいますぐにできることはないか」について考えるのが好きです。
+              <br />
+              アイデアが浮かんだら、すぐ行動に移し、試行錯誤を繰り返しながら形にしていきます。そして——
             </p>
 
             <p className="bio-text accent-text">
@@ -105,10 +107,15 @@ const About: React.FC = () => {
 
               {/* Core Stack */}
               <div style={{ marginBottom: "20px" }}>
-                <span className="tech-group-label" style={{ display: "block", marginBottom: "10px" }}>Core Stack</span>
+                <span
+                  className="tech-group-label"
+                  style={{ display: "block", marginBottom: "10px" }}
+                >
+                  Core Stack
+                </span>
                 <div className="tech-tags">
                   {["TypeScript", "React", "React Native", "Expo"].map((t) => (
-                    <span key={t} className="tag" >
+                    <span key={t} className="tag">
                       {t}
                     </span>
                   ))}
@@ -116,18 +123,50 @@ const About: React.FC = () => {
               </div>
 
               {/* Compact Stack */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "12px",
+                }}
+              >
                 {techGroups.map(({ label, techs }) => {
-                  const coreSet = new Set(["React", "React Native", "TypeScript", "Expo"]);
-                  const remaining = techs.filter(t => !coreSet.has(t));
+                  const coreSet = new Set([
+                    "React",
+                    "React Native",
+                    "TypeScript",
+                    "Expo",
+                  ]);
+                  const remaining = techs.filter((t) => !coreSet.has(t));
                   if (remaining.length === 0) return null;
 
                   return (
-                    <div key={label} style={{ display: "flex", alignItems: "baseline", gap: "16px" }}>
-                      <span className="tech-group-label" style={{ display: "block", width: "120px", flexShrink: 0, margin: 0 }}>{label}</span>
+                    <div
+                      key={label}
+                      style={{
+                        display: "flex",
+                        alignItems: "baseline",
+                        gap: "16px",
+                      }}
+                    >
+                      <span
+                        className="tech-group-label"
+                        style={{
+                          display: "block",
+                          width: "120px",
+                          flexShrink: 0,
+                          margin: 0,
+                        }}
+                      >
+                        {label}
+                      </span>
                       <div className="tech-tags" style={{ gap: "6px" }}>
                         {remaining.map((t) => (
-                          <span key={t} className="tag" style={{ background: "transparent" }}>
+                          <span
+                            key={t}
+                            className="tag"
+                            style={{ background: "transparent" }}
+                          >
                             {t}
                           </span>
                         ))}
