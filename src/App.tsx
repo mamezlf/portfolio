@@ -3,6 +3,7 @@ import Welcome from './components/organisms/Welcome';
 import About from './components/organisms/About';
 import Projects from './components/organisms/Projects';
 import Closing from './components/organisms/Closing';
+import navStyles from './components/organisms/Nav/Nav.module.css';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('welcome');
@@ -35,14 +36,14 @@ const App: React.FC = () => {
 
   return (
     <>
-      <nav className="nav">
-        <div className="nav-inner">
-          <span className="nav-logo" onClick={() => scrollTo('welcome')}>Lingfang ·</span>
-          <ul className="nav-links">
-            <li><a className={`nav-link ${activeSection === 'welcome' ? 'active' : ''}`} href="#welcome">Top</a></li>
-            <li><a className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} href="#about">About</a></li>
-            <li><a className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`} href="#projects">Projects</a></li>
-            <li><a className={`nav-link ${activeSection === 'closing' ? 'active' : ''}`} href="#closing">Contact</a></li>
+      <nav className={navStyles.nav}>
+        <div className={navStyles.inner}>
+          <span className={navStyles.logo} onClick={() => scrollTo('welcome')}>Lingfang ·</span>
+          <ul className={navStyles.links}>
+            <li><a className={`${navStyles.link} ${activeSection === 'welcome' ? navStyles.linkActive : ''}`.trim()} href="#welcome">Top</a></li>
+            <li><a className={`${navStyles.link} ${activeSection === 'about' ? navStyles.linkActive : ''}`.trim()} href="#about">About</a></li>
+            <li><a className={`${navStyles.link} ${activeSection === 'projects' ? navStyles.linkActive : ''}`.trim()} href="#projects">Projects</a></li>
+            <li><a className={`${navStyles.link} ${activeSection === 'closing' ? navStyles.linkActive : ''}`.trim()} href="#closing">Contact</a></li>
           </ul>
         </div>
       </nav>

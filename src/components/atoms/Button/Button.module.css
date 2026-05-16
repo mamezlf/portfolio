@@ -1,0 +1,130 @@
+.primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s ease, box-shadow 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.primary:hover {
+  opacity: 0.88;
+  box-shadow: 0 4px 16px rgba(44, 43, 40, 0.12);
+}
+
+.ghost {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.ghost:hover {
+  background: var(--bg-soft);
+  border-color: var(--border-hover);
+}
+
+.tab {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 5px 12px;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+  letter-spacing: 0.03em;
+}
+
+.tab:hover {
+  background: var(--bg-soft);
+  color: var(--text-secondary);
+}
+
+.tabActive {
+  background: var(--bg-soft);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.close {
+  position: absolute;
+  top: -36px;
+  right: 0;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.15s;
+  font-family: var(--font-mono);
+  padding: 4px 8px;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 28px;
+  padding: var(--spacing-lg) var(--spacing-md);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+  z-index: 1000;
+  font-family: var(--font-mono);
+  line-height: 1;
+}
+
+.icon:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+/* Add direction modifiers */
+.iconPrev {
+  left: -72px;
+}
+
+.iconNext {
+  right: -72px;
+}
+
+@media (max-width: 768px) {
+  .iconPrev {
+    left: -48px;
+  }
+  .iconNext {
+    right: -48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .iconPrev {
+    left: 8px;
+  }
+  .iconNext {
+    right: 8px;
+  }
+}

@@ -151,4 +151,4 @@ Quietly memorable, not loudly impressive.
 
 Now analyze my existing portfolio structure and redesign the UX/UI, layout hierarchy, spacing, typography, visual rhythm, and content presentation according to this direction.
 
-请你先将你的计划分成 22 个小计划告诉我。我会一个一个喂给你，以防你 reach the maximum token limit。
+请你先将你的计划分成 22 个小计划告诉我。我会一个一个喂给你.

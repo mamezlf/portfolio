@@ -1,0 +1,46 @@
+/* Bio Info Variant */
+.bioRow {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.bioLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.bioValue {
+  font-size: 13px;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+/* Lang Variant */
+.langRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.langRow:last-child {
+  border-bottom: none;
+}
+
+.langLabel {
+  font-size: 13px;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.langValue {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: right;
+}
