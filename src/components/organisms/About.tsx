@@ -1,4 +1,10 @@
 import React from "react";
+import { SectionHeader } from "../molecules/SectionHeader";
+import { Avatar } from "../atoms/Avatar";
+import { KeyValueRow } from "../molecules/KeyValueRow";
+import { Eyebrow } from "../atoms/Eyebrow";
+import { Badge } from "../atoms/Badge";
+import { ExternalLink } from "../atoms/ExternalLink";
 
 /* Plan 10: Neutral language colors — remove visual noise */
 const languages = [
@@ -33,10 +39,7 @@ const About: React.FC = () => {
   return (
     <div className="about">
       <div className="section-container">
-        <div className="about-header">
-          <span className="section-label">About</span>
-          <h2 className="section-title">自己紹介</h2>
-        </div>
+        <SectionHeader label="About" title="自己紹介" className="about-header" />
 
         {/* Plan 07: 5fr / 4fr grid — bio-first, skills secondary */}
         <div className="about-grid">
@@ -45,13 +48,7 @@ const About: React.FC = () => {
           <div className="about-bio">
             {/* Plan 08: Avatar without border card */}
             <div className="bio-identity">
-              <div className="bio-avatar">
-                <img
-                  src={`${import.meta.env.BASE_URL}oriduru_yellow.svg`}
-                  alt="Avatar"
-                  style={{ width: "52%", height: "52%", objectFit: "contain" }}
-                />
-              </div>
+              <Avatar src={`${import.meta.env.BASE_URL}oriduru_yellow.svg`} alt="Avatar" />
               <div className="bio-meta">
                 <h3>Lingfang Zhang（張 齢方）</h3>
                 <p className="bio-role">Software Engineer &nbsp;/&nbsp; NLP Researcher</p>
@@ -73,22 +70,10 @@ const About: React.FC = () => {
 
             {/* Plan 07: Info grid — subtle metadata */}
             <div className="bio-info-row">
-              <div className="bio-info-item">
-                <span className="bio-info-label">大学</span>
-                <span className="bio-info-value">早稲田大学大学院</span>
-              </div>
-              <div className="bio-info-item">
-                <span className="bio-info-label">研究</span>
-                <span className="bio-info-value">NLP / mLLM</span>
-              </div>
-              <div className="bio-info-item">
-                <span className="bio-info-label">専攻</span>
-                <span className="bio-info-value">情報理工・情報通信</span>
-              </div>
-              <div className="bio-info-item">
-                <span className="bio-info-label">卒業予定</span>
-                <span className="bio-info-value">2028年3月 修士卒</span>
-              </div>
+              <KeyValueRow label="大学" value="早稲田大学大学院" />
+              <KeyValueRow label="研究" value="NLP / mLLM" />
+              <KeyValueRow label="専攻" value="情報理工・情報通信" />
+              <KeyValueRow label="卒業予定" value="2028年3月 修士卒" />
             </div>
           </div>
 
@@ -97,14 +82,14 @@ const About: React.FC = () => {
 
             {/* Plan 09: Tech stack — no box-shadow card, line-separated */}
             <div className="skills-block">
-              <h4 className="skills-heading">技術スタック</h4>
+              <Eyebrow as="h4" className="skills-heading">技術スタック</Eyebrow>
 
               {/* Core stack */}
               <div className="skills-core">
                 <span className="tech-group-label">Core</span>
                 <div className="tech-tags">
                   {["TypeScript", "React", "React Native", "Expo"].map((t) => (
-                    <span key={t} className="tag tag-core">{t}</span>
+                    <Badge key={t} color="core">{t}</Badge>
                   ))}
                 </div>
               </div>
@@ -119,7 +104,7 @@ const About: React.FC = () => {
                       <span className="tech-group-label">{label}</span>
                       <div className="tech-tags">
                         {remaining.map((t) => (
-                          <span key={t} className="tag">{t}</span>
+                          <Badge key={t}>{t}</Badge>
                         ))}
                       </div>
                     </div>
@@ -130,39 +115,34 @@ const About: React.FC = () => {
 
             {/* Plan 10: Languages — neutral, no colored dots */}
             <div className="skills-block">
-              <h4 className="skills-heading">言語</h4>
+              <Eyebrow as="h4" className="skills-heading">言語</Eyebrow>
               <div className="lang-list">
                 {languages.map(({ lang, level }) => (
-                  <div key={lang} className="lang-item">
-                    <span className="lang-name">{lang}</span>
-                    <span className="lang-level">{level}</span>
-                  </div>
+                  <KeyValueRow key={lang} variant="lang" label={lang} value={level} />
                 ))}
               </div>
             </div>
 
             {/* Plan 11: Research — blockquote style, no icon */}
             <div className="research-block">
-              <h4 className="skills-heading">研究テーマ</h4>
+              <Eyebrow as="h4" className="skills-heading">研究テーマ</Eyebrow>
               <div className="research-body">
                 <p className="research-title">
-                  <a
+                  <ExternalLink
                     href="https://www.jstage.jst.go.jp/article/pjsai/JSAI2025/0/JSAI2025_1Win435/_pdf/-char/en"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="research-link"
                   >
                     mBERT を用いた逐次多言語学習
-                  </a>
+                  </ExternalLink>
                 </p>
                 <p className="research-links">
-                  <a href="research.pdf" target="_blank" rel="noopener noreferrer" className="research-doc-link">
+                  <ExternalLink href="research.pdf" className="research-doc-link">
                     説明資料
-                  </a>
+                  </ExternalLink>
                   <span className="research-sep">·</span>
-                  <a href="poster.pdf" target="_blank" rel="noopener noreferrer" className="research-doc-link">
+                  <ExternalLink href="poster.pdf" className="research-doc-link">
                     JSAI2025 発表ポスター
-                  </a>
+                  </ExternalLink>
                 </p>
               </div>
             </div>

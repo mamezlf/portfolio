@@ -1,4 +1,6 @@
 import React from 'react';
+import { Eyebrow } from '../atoms/Eyebrow';
+import { ExternalLink } from '../atoms/ExternalLink';
 
 const Closing: React.FC = () => {
   return (
@@ -6,7 +8,7 @@ const Closing: React.FC = () => {
       {/* Plan 17: No closing-bg-glow */}
       <div className="section-container">
         <div className="closing-inner">
-          <span className="section-label">Contact</span>
+          <Eyebrow>Contact</Eyebrow>
 
           {/* Plan 17: Calmer title — no accent color split, unified tone */}
           <h2 className="closing-title">
@@ -27,24 +29,20 @@ const Closing: React.FC = () => {
 
           {/* Plan 18: Text-only links — no icon, no border box */}
           <div className="closing-links">
-            <a
+            <ExternalLink
               href="https://note.com/mamezlf"
-              target="_blank"
-              rel="noopener noreferrer"
               className="closing-text-link"
             >
               <span className="clink-platform">note</span>
               <span className="clink-handle">@mamezlf</span>
-            </a>
-            <a
+            </ExternalLink>
+            <ExternalLink
               href="https://github.com/mamezlf"
-              target="_blank"
-              rel="noopener noreferrer"
               className="closing-text-link"
             >
               <span className="clink-platform">GitHub</span>
               <span className="clink-handle">mamezlf</span>
-            </a>
+            </ExternalLink>
           </div>
 
           <div className="closing-footer">

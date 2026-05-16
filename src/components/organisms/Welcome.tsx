@@ -1,4 +1,6 @@
 import React from "react";
+import { Button } from "../atoms/Button";
+import { Eyebrow } from "../atoms/Eyebrow";
 
 const Welcome: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -10,9 +12,9 @@ const Welcome: React.FC = () => {
       <div className="welcome-content section-container">
 
         {/* Plan 04+05: Quiet eyebrow — no dot, just text */}
-        <p className="welcome-eyebrow">
+        <Eyebrow variant="subtle" as="p">
           早稲田大学大学院 &nbsp;·&nbsp; 情報理工・情報通信専攻
-        </p>
+        </Eyebrow>
 
         {/* Plan 05: Title — left-aligned, no accent color split */}
         <h1 className="welcome-title">
@@ -34,9 +36,9 @@ const Welcome: React.FC = () => {
 
         {/* Plan 06: Single CTA */}
         <div className="welcome-actions">
-          <button className="btn-primary" onClick={() => scrollTo("projects")}>
+          <Button variant="primary" onClick={() => scrollTo("projects")}>
             プロジェクトを見る
-          </button>
+          </Button>
         </div>
 
         {/* Plan 06: Scroll indicator — pure line only, no icon */}

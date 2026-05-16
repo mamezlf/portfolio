@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Welcome from './components/Welcome';
-import About from './components/About';
-import Projects from './components/Projects';
-import Closing from './components/Closing';
+import Welcome from './components/organisms/Welcome';
+import About from './components/organisms/About';
+import Projects from './components/organisms/Projects';
+import Closing from './components/organisms/Closing';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('welcome');
