@@ -1,0 +1,28 @@
+.default {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.skillsHeading {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--spacing-md);
+  font-weight: 400;
+}
+
+.subtle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--spacing-xl);
+  animation: fadeUp 0.9s var(--ease) 0.1s both;
+}

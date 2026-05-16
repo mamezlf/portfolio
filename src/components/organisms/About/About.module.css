@@ -1,0 +1,143 @@
+.about {
+  min-height: 100vh;
+  padding: var(--spacing-4xl) 0;
+  border-top: 1px solid var(--border);
+  display: grid;
+  align-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  gap: var(--spacing-3xl);
+  align-items: start;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.meta h3 {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.role {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.03em;
+}
+
+.text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  margin-bottom: var(--spacing-md);
+  font-weight: 300;
+}
+
+.infoRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border);
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.skillsBlock {
+  border-top: 1px solid var(--border);
+  padding-top: var(--spacing-lg);
+}
+
+.skillsCore {
+  margin-bottom: var(--spacing-md);
+}
+
+.skillsRows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.skillsRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-md);
+}
+
+.techGroupLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  width: 112px;
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.langList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.researchBlock {
+  border-top: 1px solid var(--border);
+  padding-top: var(--spacing-lg);
+}
+
+.researchBody {
+  border-left: 2px solid var(--accent-light);
+  padding-left: var(--spacing-md);
+}
+
+.researchTitle {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+}
+
+.researchLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.researchSep {
+  opacity: 0.4;
+}
+
+@media (max-width: 700px) {
+  .about {
+    padding-top: var(--spacing-3xl);
+    padding-bottom: var(--spacing-3xl);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+}
