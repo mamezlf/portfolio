@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import { SectionHeader } from "../molecules/SectionHeader";
+import { FilterGroup } from "../molecules/FilterGroup";
+import { ExpandableCard } from "./ExpandableCard";
+import { Lightbox, type LightboxState } from "./Lightbox";
+import { ExternalLink } from "../atoms/ExternalLink";
 
 interface Project {
   id: string;
@@ -118,11 +123,7 @@ const typeLabel: Record<string, string> = {
 const Projects: React.FC = () => {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
-  const [previewState, setPreviewState] = useState<{
-    images: string[];
-    index: number;
-    direction: "left" | "right" | null;
-  } | null>(null);
+  const [previewState, setPreviewState] = useState<LightboxState | null>(null);
 
   const toggleExpand = (id: string) => {
     setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -136,184 +137,78 @@ const Projects: React.FC = () => {
   return (
     <div className="projects">
       <div className="section-container">
-        <div className="projects-header">
-          <span className="section-label">Projects</span>
-          <h2 className="section-title">開発経験</h2>
-          <p className="projects-sub">
-            日常で気づいた違和感を課題として捉え、エンジニアリングで解消することに取り組んできました。
-          </p>
-        </div>
+        <SectionHeader
+          label="Projects"
+          title="開発経験"
+          subtitle="日常で気づいた違和感を課題として捉え、エンジニアリングで解消することに取り組んできました。"
+          className="projects-header"
+        />
 
         {/* Plan 16: Filter tabs — Notion-style */}
-        <div className="project-filters">
-          {filterOptions.map(({ key, label }) => (
-            <button
-              key={key}
-              className={`filter-tab ${activeFilter === key ? "active" : ""}`}
-              onClick={() => setActiveFilter(key)}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
+        <FilterGroup<FilterKey>
+          options={filterOptions}
+          activeKey={activeFilter}
+          onChange={setActiveFilter}
+        />
 
         {/* Plan 12: Narrative card flow — no timeline nodes or vertical lines */}
         <div className="project-list">
           {filtered.map((project) => (
-            <div key={project.id} className="project-item">
+            <ExpandableCard
+              key={project.id}
+              id={project.id}
+              period={project.period}
+              typeLabel={typeLabel[project.type]}
+              title={project.name}
+              subtitle={project.tagline}
+              tags={project.tags}
+              isExpanded={!!expanded[project.id]}
+              onToggle={toggleExpand}
+            >
+              {project.story && (
+                <p className="project-story">{project.story}</p>
+              )}
 
-              {/* Plan 14: Card header — always visible */}
-              <div
-                className="project-card-header"
-                onClick={() => toggleExpand(project.id)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => e.key === "Enter" && toggleExpand(project.id)}
-              >
-                <div className="project-meta">
-                  <span className="project-period">{project.period}</span>
-                  <span className="project-type-badge">
-                    {typeLabel[project.type]}
-                  </span>
-                </div>
-                <h3 className="project-name">{project.name}</h3>
-                <p className="project-tagline">{project.tagline}</p>
-                <div className="project-tags">
-                  {project.tags.map((t) => (
-                    <span key={t} className="tag">
-                      {t}
-                    </span>
+              {/* Plan 15: Images */}
+              {project.images && (
+                <div className="project-images">
+                  {project.images.map((img, idx) => (
+                    <img
+                      key={idx}
+                      src={`${import.meta.env.BASE_URL}${img}`}
+                      alt={`${project.name} screenshot ${idx + 1}`}
+                      className="project-thumbnail"
+                      onClick={() =>
+                        setPreviewState({ images: project.images!, index: idx, direction: null })
+                      }
+                    />
                   ))}
                 </div>
+              )}
 
-                {/* Plan 14: Expand indicator — clean chevron text */}
-                <span className="expand-indicator">
-                  {expanded[project.id] ? "閉じる" : "詳しく読む"}
-                  <span className="expand-arrow">
-                    {expanded[project.id] ? " ↑" : " ↓"}
-                  </span>
-                </span>
-              </div>
-
-              {/* Plan 13: Expandable narrative — 4-part structure */}
-              <div
-                className={`project-detail-wrapper ${expanded[project.id] ? "expanded" : ""}`}
-              >
-                <div className="project-detail">
-                  {project.story && (
-                    <p className="project-story">{project.story}</p>
-                  )}
-
-                  {/* Plan 15: Images */}
-                  {project.images && (
-                    <div className="project-images">
-                      {project.images.map((img, idx) => (
-                        <img
-                          key={idx}
-                          src={`${import.meta.env.BASE_URL}${img}`}
-                          alt={`${project.name} screenshot ${idx + 1}`}
-                          className="project-thumbnail"
-                          onClick={() =>
-                            setPreviewState({ images: project.images!, index: idx, direction: null })
-                          }
-                        />
-                      ))}
-                    </div>
-                  )}
-
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      {project.linkLabel || "リンクを開く"} →
-                    </a>
-                  )}
-                </div>
-              </div>
-
-            </div>
+              {project.link && (
+                <ExternalLink href={project.link} className="project-link">
+                  {project.linkLabel || "リンクを開く"} →
+                </ExternalLink>
+              )}
+            </ExpandableCard>
           ))}
         </div>
 
         {/* Bottom philosophy */}
         <div className="projects-footer">
           <p className="philo-quote">
-            プロダクトは、作ったチームを映します。
-            <br />
-            使う人に寄り添ったプロダクトを作り続けたいです。
+            使う人に寄り添ったプロダクトを作り続けます。
           </p>
         </div>
       </div>
 
       {/* Plan 15: Lightbox */}
-      {previewState && (
-        <div className="lightbox" onClick={() => setPreviewState(null)}>
-          <div
-            className="lightbox-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="lightbox-close"
-              onClick={() => setPreviewState(null)}
-              aria-label="閉じる"
-            >
-              ✕
-            </button>
-            {previewState.images.length > 1 && (
-              <button
-                className="lightbox-nav prev"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setPreviewState({
-                    ...previewState,
-                    direction: "right",
-                    index:
-                      (previewState.index - 1 + previewState.images.length) %
-                      previewState.images.length,
-                  });
-                }}
-                aria-label="前の画像"
-              >
-                ←
-              </button>
-            )}
-            <img
-              key={previewState.index}
-              src={`${import.meta.env.BASE_URL}${previewState.images[previewState.index]}`}
-              alt="Preview"
-              className={`lightbox-img ${previewState.direction === "left"
-                ? "slide-from-right"
-                : previewState.direction === "right"
-                  ? "slide-from-left"
-                  : ""
-                }`}
-            />
-            {previewState.images.length > 1 && (
-              <button
-                className="lightbox-nav next"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setPreviewState({
-                    ...previewState,
-                    direction: "left",
-                    index:
-                      (previewState.index + 1) % previewState.images.length,
-                  });
-                }}
-                aria-label="次の画像"
-              >
-                →
-              </button>
-            )}
-            <div className="lightbox-counter">
-              {previewState.index + 1} / {previewState.images.length}
-            </div>
-          </div>
-        </div>
-      )}
+      <Lightbox
+        state={previewState}
+        onClose={() => setPreviewState(null)}
+        onChangeState={setPreviewState}
+      />
     </div>
   );
 };
