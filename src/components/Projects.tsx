@@ -1,19 +1,11 @@
-import React, { useState } from "react";
-
-// Plan 13: Narrative structure — Problem / Action / Outcome / Reflection
-interface Narrative {
-  problem: string;
-  action: string;
-  outcome: string;
-  reflection: string;
-}
+import React, { useState, useEffect } from "react";
 
 interface Project {
   id: string;
   period: string;
   name: string;
   tagline: string;
-  narrative: Narrative;
+  story: string;
   tags: string[];
   link?: string;
   linkLabel?: string;
@@ -27,16 +19,7 @@ const projects: Project[] = [
     period: "大学院 / 2026.4 –",
     name: "URIAGE",
     tagline: "個人販売者の収支管理を、アプリで一元化",
-    narrative: {
-      problem:
-        "ハンドメイド作品をフリマアプリで販売する中、利益を把握するために毎回手動で売上から送料・資材費を差し引く計算を繰り返す必要があった。記録も分散していて、月単位での振り返りができなかった。",
-      action:
-        "売上と経費の記録・利益自動計算・商品別収支一覧などの機能を備えたiOSアプリを Swift / SwiftUI で開発した。日常的に自分で使いながら、実運用ベースで設計と改善を繰り返した。",
-      outcome:
-        "繰り返し発生していた計算作業が自動化され、月次レポートで販売活動の振り返りも可能になった。商品情報の自動取得により、手入力の手間も大幅に削減された。",
-      reflection:
-        "自分が使い続けるプロダクトを作ることで、「本当に不便なのはどこか」が明確になった。実運用ベースの設計の重要性と、最初から完璧を目指さない反復開発の価値を実感した。",
-    },
+    story: "私はハンドメイドが趣味で、作った作品をフリマアプリで販売している中、利益を把握するのに毎回手動で売上から送料や資材費などを差し引く計算を行う必要があることに違和感を感じた。この違和感を課題として捉え、解決するために 売上と経費の記録・利益自動計算・商品別収支一覧 などの機能を備えたiOSアプリを開発した。日常生活で利用しながら改善を重ね、繰り返し発生する計算作業を効率化した。",
     tags: ["Swift", "SwiftUI", "SwiftData", "iOS"],
     link: "https://note.com/mamezlf/n/n775888ddc071",
     linkLabel: "note 記事を読む",
@@ -56,16 +39,7 @@ const projects: Project[] = [
     period: "大学3年 / 2024.8 – 2024.11",
     name: "KNTY24 (KINTAI)",
     tagline: "開発を早く進める仕組みを、未経験チームの中で整備",
-    narrative: {
-      problem:
-        "インターンで4人の未経験チームによるアジャイル開発に参加した。メンバーのバックグラウンドがバラバラで、コードレビューの品質にばらつきが出やすく、フレックス勤務で進捗が属人化しやすい状況だった。",
-      action:
-        "PRルール・コーディング規約・フォーマッターを整備してレビュー品質の底上げを図った。また、非同期で作業するメンバー間で状況を共有できるよう、Slackのログチャンネル運用を提案・導入した。エンジニアとしての実装に加え、進捗管理とタスク分配でPMの役割も担った。",
-      outcome:
-        "5回の2週間スプリントで主要5機能群・7画面をリリース可能な完成度まで実装した。プログラム全体を通じ、「開発スピードが速く、プロダクトの品質も高い」チームと評価を受けた。",
-      reflection:
-        "技術標準化とコミュニケーション設計が、チームの開発速度と品質に直結することを体感した。プロセスへの投資が、個人の生産性より大きなリターンをもたらすと学んだ。",
-    },
+    story: "インターンのプログラムで、社内向け勤怠管理アプリを4人チームでアジャイル開発によって構築した。\nReact Native＋TypeScriptを用い、5回のスプリントを通して、要件定義から設計・実装・テスト・レビューまで一貫して行った。\n私はエンジニアとして実装を担う一方、進捗管理やタスク分配、顧客への要件確認も主体的に引き受け、実質 PM の役割を果たした。また、PRルールやコーディング規約、フォーマッターを整備し、レビュー品質の向上に貢献した。さらに、非同期ワークで作業するメンバー間で状況を共有できるよう、Slackのログチャンネル運用を提案・導入し、チームの開発速度の向上を果たした。結果として、私たちは「開発スピードが速く、プロダクトの品質も高い」チームと評価を受けた。",
     tags: ["React Native", "TypeScript", "Scrum", "Jira", "GitHub"],
     type: "internship",
   },
@@ -74,16 +48,7 @@ const projects: Project[] = [
     period: "大学4年 / 2025.3 – 2025.10",
     name: "CURRICULUM",
     tagline: "未経験者がゴールまで走り切れる、学習体験の設計",
-    narrative: {
-      problem:
-        "IT業界の人材不足に対し就職を希望する文系学生は多い。しかし既存の研修教材は理論とサンプルコードが中心で、未経験者が「どこから始めればいいか」わからず、途中で諦めてしまう構造になっていた。",
-      action:
-        "「知識の呪い」を意識的に解きほぐし、変数がなぜ存在するかといった当たり前の知識を一から言語化し直した。理論→練習→実践のループとチェックポイントによる心理的安全設計を軸に、森の小動物キャラクターによる世界観も作り込み、2000枚・70項目のスライドを4ヶ月未満で単独制作した。",
-      outcome:
-        "文系出身の社員3名が全員完走し、現在も実際の研修として継続運用されている。",
-      reflection:
-        "「技術を教えること」より先に「どこで詰まるか・どこで諦めるか」を設計の軸に置くことが、学習体験設計の本質だと気づいた。エンジニアリングと教育設計の思考が、思いのほか似ていると感じた。",
-    },
+    story: "IT業界は人材不足が深刻で、就職を希望する文系学生も多い。しかし既存の研修教材は理論とサンプルコードが中心で、未経験者にとって「どこから始めればいいか」がわからず、学習を続けられない構造になっていた。 この課題に向き合い、文系・未経験の学生がWebアプリ開発をゼロから学べるKUMON式カリキュラムを単独で設計・制作した。\n最大の壁は「知識の呪い」だった。変数がなぜ存在するのか、インデントに意味があること——コードを書く上でのあらゆる「デフォルト知識」を意識的に言語化し直すところから始めた。\n技術を教えることより先に、「学習者はどこで詰まるか」「どこで諦めるか」を設計の軸に置いた。理論→練習→実践のループを繰り返し、要所にチェックポイントと成功体験を配置。また、森の小動物キャラクターによる世界観を作り込み、長い学習過程でも継続できる体験を設計した。\n完成後、文系出身の社員3名が全員完走。現在も実際の研修として継続運用されている。",
     tags: ["React", "TypeScript", "Node.js", "Java", "SQL", "Spring", "Instructional Design"],
     type: "internship",
   },
@@ -92,16 +57,7 @@ const projects: Project[] = [
     period: "大学4年 / 2025.10 – 2026.3",
     name: "BRIDGEAPP",
     tagline: "「なぜ作るか」から考えた、初めての上流工程",
-    narrative: {
-      problem:
-        "既存の就職市場には、学生・企業双方にとってミスマッチが生まれやすい構造がある。スキルが可視化されないまま面接に臨む学生と、即戦力を求めながら出会えない企業の間に、情報の非対称性があった。",
-      action:
-        "Lean Canvasでビジネスモデル・課題・提供価値を整理し、設計の軸を定めた。学生・企業それぞれのユーザーフローを設計し、Atomic Designの考え方で画面を分解しながら、要件定義→画面仕様書→UIデザイン→DB設計まで上流工程をほぼ一人で推進した。",
-      outcome:
-        "33画面・8機能群のデザインが完成した。チーム離脱後も制作資材がチームの基盤として継続活用されている。",
-      reflection:
-        "「何を作るか」より「なぜ作るか」を先に考え抜くことで、設計の判断基準が一本の線でつながった。上流工程の論理性が、下流の実装速度と品質を決めると実感した。",
-    },
+    story: "「企業に自分を正しく届けられない」、「自分に合う場所を見つけられない」\n「即戦力が欲しいのにそんな学生となかなか巡り合えない」——\n既存の就職市場には、学生・企業双方にとってミスマッチが生まれやすい構造がある。私たちは、未経験学生向けのIT研修を運営し、研修を通じて蓄積された学生データを活かし、ミスマッチが生まれやすい構造を変えられると考えた。その一環として、私は学生と企業のマッチングプラットフォームのAI駆動開発に携わった。\n実務レベルの上流工程は初めてだったこらこそ、「何を作るか」より「なぜ作るか」を先に考え抜いた。その手段として、Lean Canvasでビジネスモデルを整理した。その結果、課題・提供価値・収益構造が一本の線でつながり、設計の軸が定まった。学生・企業それぞれのユーザーフローを設計し、Atomic Designの考え方で画面を分解しながら、詳細設計まで完成させた。離脱後もチームの基盤資産として継続活用されている。",
     tags: ["Lean Canvas", "Requirements Definition", "System Design", "AI Driven Development"],
     type: "internship",
   },
@@ -110,16 +66,7 @@ const projects: Project[] = [
     period: "大学3年 / 2024.7",
     name: "Wasecord",
     tagline: "履修経験を持つ先輩に、後輩が気軽に質問できる場",
-    narrative: {
-      problem:
-        "「この授業、どう勉強すればいい？」「課題はどれくらい大変？」——そんな後輩の不安を、先輩に気軽に相談できる場がなかった。学年・授業ごとに情報が分断されており、口コミが継承されにくい構造があった。",
-      action:
-        "チーム4人でフロントエンドを主導し、授業単位でつながれるチャット機能を持つWebアプリを開発した。グループチャット・DM・授業タグ機能により、学生同士の情報共有を設計した。使いやすさと一貫性を意識したUI/UXを実装した。",
-      outcome:
-        "学年・授業ごとに分断されていた学生間情報共有を統一するプラットフォームが完成し、チームで一個のプロダクトを作り切った初めての経験となった。",
-      reflection:
-        "フロントエンドを主導する中で、設計の一貫性とチームコミュニケーションの重要性を学んだ。プロダクトの「使いやすさ」は機能の多さではなく、流れの自然さにあると気づいた。",
-    },
+    story: "「この授業、どう勉強すればいい？」「課題はどれくらい大変？」\n——そんな後輩の不安を、先輩に気軽に相談できる場を作りたいという思いから、早大情報理工学科向けの授業連携Webアプリを開発した。\nチーム 4 人でゼロから制作し、授業単位でつながれるチャット機能を持つWebアプリを開発した。グループチャットやDMを通じて、学生同士の情報共有を可能にした。\nチームの中で私はフロントエンドを担当し、使いやすさと一貫性を意識した設計を行い、チームで一個のプロダクトを初めて作り切る経験となった。",
     tags: ["React", "JavaScript", "PHP", "MySQL", "Docker", "GitHub"],
     images: [
       "wasecord/login.png",
@@ -140,16 +87,7 @@ const projects: Project[] = [
     period: "大学1年 / 2022",
     name: "LovePoem",
     tagline: "エンジニアになりたいと思った、あの夜",
-    narrative: {
-      problem:
-        "K-POPダンスイベントの動画で「推し」の沼に落ちた。神シーンを見返すたびに動画を探し直す必要があり、お気に入りのシーンを一覧で管理できる場所がなかった。",
-      action:
-        "まずC言語でシーン収集ツールを作り、次にHTML+CSSを独学しながら、神シーンを一覧管理・再利用できるWebサイトを構築した。プログラミングは全て独学、コードで課題を解消する体験を初めて得た。",
-      outcome:
-        "手間が省け、推し活が格段に快適になった。「コードで身の回りの課題を解消できる」という体験を、初めて実感として得られた。",
-      reflection:
-        "この体験がエンジニアを志す原点となった。プログラミングは難しいものではなく、「自分の不便」を解消できる身近な道具だと気づいた瞬間だった。",
-    },
+    story: "大学一年生のころ、K-POPダンスイベントの動画に登場したダンサーの沼に落ちた。推しの神シーンを集めるツールを C 言語で作り、プログラミングで手間を省ける体験から、コードを書く楽しさに目覚めた。\nその後、神シーンを見返すたびに、動画を探し直す必要があることに違和感を感じ、 HTML+CSS を独学しながら、神シーンを一覧管理・再利用できるWebサイトを構築した。コードで身の回りの課題を解消できた体験が、エンジニアを志す原点となった。",
     tags: ["HTML", "CSS", "JavaScript", "C"],
     link: "https://mamezlf.github.io/lovepoem/index.html",
     linkLabel: "Webサイトを見る",
@@ -175,13 +113,7 @@ const typeLabel: Record<string, string> = {
   internship: "インターン",
 };
 
-// Plan 13: Narrative section labels
-const narrativeLabels: { key: keyof Narrative; label: string }[] = [
-  { key: "problem", label: "課題" },
-  { key: "action", label: "行動" },
-  { key: "outcome", label: "成果" },
-  { key: "reflection", label: "気づき" },
-];
+
 
 const Projects: React.FC = () => {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
@@ -195,6 +127,39 @@ const Projects: React.FC = () => {
   const toggleExpand = (id: string) => {
     setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
   };
+
+  useEffect(() => {
+    if (!previewState || previewState.images.length <= 1) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
+        setPreviewState((prev) =>
+          prev
+            ? {
+                ...prev,
+                direction: "right",
+                index: (prev.index - 1 + prev.images.length) % prev.images.length,
+              }
+            : null
+        );
+      } else if (e.key === "ArrowRight") {
+        setPreviewState((prev) =>
+          prev
+            ? {
+                ...prev,
+                direction: "left",
+                index: (prev.index + 1) % prev.images.length,
+              }
+            : null
+        );
+      } else if (e.key === "Escape") {
+        setPreviewState(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [previewState]);
 
   const filtered =
     activeFilter === "all"
@@ -268,16 +233,9 @@ const Projects: React.FC = () => {
                 className={`project-detail-wrapper ${expanded[project.id] ? "expanded" : ""}`}
               >
                 <div className="project-detail">
-                  <div className="project-narrative">
-                    {narrativeLabels.map(({ key, label }) => (
-                      <div key={key} className="narrative-block">
-                        <span className="narrative-label">{label}</span>
-                        <p className="narrative-text">
-                          {project.narrative[key]}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
+                  {project.story && (
+                    <p className="project-story">{project.story}</p>
+                  )}
 
                   {/* Plan 15: Images */}
                   {project.images && (
@@ -359,13 +317,12 @@ const Projects: React.FC = () => {
               key={previewState.index}
               src={`${import.meta.env.BASE_URL}${previewState.images[previewState.index]}`}
               alt="Preview"
-              className={`lightbox-img ${
-                previewState.direction === "left"
-                  ? "slide-from-right"
-                  : previewState.direction === "right"
+              className={`lightbox-img ${previewState.direction === "left"
+                ? "slide-from-right"
+                : previewState.direction === "right"
                   ? "slide-from-left"
                   : ""
-              }`}
+                }`}
             />
             {previewState.images.length > 1 && (
               <button
