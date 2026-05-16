@@ -189,6 +189,7 @@ const Projects: React.FC = () => {
   const [previewState, setPreviewState] = useState<{
     images: string[];
     index: number;
+    direction: "left" | "right" | null;
   } | null>(null);
 
   const toggleExpand = (id: string) => {
@@ -284,11 +285,11 @@ const Projects: React.FC = () => {
                       {project.images.map((img, idx) => (
                         <img
                           key={idx}
-                          src={img}
+                          src={`${import.meta.env.BASE_URL}${img}`}
                           alt={`${project.name} screenshot ${idx + 1}`}
                           className="project-thumbnail"
                           onClick={() =>
-                            setPreviewState({ images: project.images!, index: idx })
+                            setPreviewState({ images: project.images!, index: idx, direction: null })
                           }
                         />
                       ))}
@@ -343,6 +344,7 @@ const Projects: React.FC = () => {
                   e.stopPropagation();
                   setPreviewState({
                     ...previewState,
+                    direction: "right",
                     index:
                       (previewState.index - 1 + previewState.images.length) %
                       previewState.images.length,
@@ -354,8 +356,16 @@ const Projects: React.FC = () => {
               </button>
             )}
             <img
-              src={previewState.images[previewState.index]}
+              key={previewState.index}
+              src={`${import.meta.env.BASE_URL}${previewState.images[previewState.index]}`}
               alt="Preview"
+              className={`lightbox-img ${
+                previewState.direction === "left"
+                  ? "slide-from-right"
+                  : previewState.direction === "right"
+                  ? "slide-from-left"
+                  : ""
+              }`}
             />
             {previewState.images.length > 1 && (
               <button
@@ -364,6 +374,7 @@ const Projects: React.FC = () => {
                   e.stopPropagation();
                   setPreviewState({
                     ...previewState,
+                    direction: "left",
                     index:
                       (previewState.index + 1) % previewState.images.length,
                   });
