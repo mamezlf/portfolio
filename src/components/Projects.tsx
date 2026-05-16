@@ -136,20 +136,20 @@ const Projects: React.FC = () => {
         setPreviewState((prev) =>
           prev
             ? {
-                ...prev,
-                direction: "right",
-                index: (prev.index - 1 + prev.images.length) % prev.images.length,
-              }
+              ...prev,
+              direction: "right",
+              index: (prev.index - 1 + prev.images.length) % prev.images.length,
+            }
             : null
         );
       } else if (e.key === "ArrowRight") {
         setPreviewState((prev) =>
           prev
             ? {
-                ...prev,
-                direction: "left",
-                index: (prev.index + 1) % prev.images.length,
-              }
+              ...prev,
+              direction: "left",
+              index: (prev.index + 1) % prev.images.length,
+            }
             : null
         );
       } else if (e.key === "Escape") {
@@ -274,8 +274,6 @@ const Projects: React.FC = () => {
         {/* Bottom philosophy */}
         <div className="projects-footer">
           <p className="philo-quote">
-            プロダクトは、作ったチームを映します。
-            <br />
             使う人に寄り添ったプロダクトを作り続けたいです。
           </p>
         </div>
