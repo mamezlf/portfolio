@@ -37,7 +37,7 @@ const App: React.FC = () => {
     <>
       <nav className="nav">
         <div className="nav-inner">
-          <span className="nav-logo" onClick={() => scrollTo('welcome')}>ZLF</span>
+          <span className="nav-logo" onClick={() => scrollTo('welcome')}>Lingfang ·</span>
           <ul className="nav-links">
             <li><a className={`nav-link ${activeSection === 'welcome' ? 'active' : ''}`} href="#welcome">Top</a></li>
             <li><a className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} href="#about">About</a></li>

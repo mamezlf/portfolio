@@ -1,38 +1,33 @@
 import React from "react";
 
+/* Plan 10: Neutral language colors — remove visual noise */
 const languages = [
-  { lang: "中国語", level: "ネイティブ", color: "#d4a96a" },
-  { lang: "日本語", level: "N1(満点) / ビジネス", color: "#7ec8a0" },
-  { lang: "英語", level: "TOEIC 895 / TOEFL 91 / ビジネス", color: "#7ab3d4" },
-  { lang: "韓国語", level: "日常会話", color: "#c47ab3" },
+  { lang: "中国語", level: "ネイティブ" },
+  { lang: "日本語", level: "N1（満点）/ ビジネス" },
+  { lang: "英語", level: "TOEIC 895 · TOEFL 91 / ビジネス" },
+  { lang: "韓国語", level: "日常会話" },
 ];
 
 const techGroups = [
   {
     label: "Frontend / Mobile",
-    techs: [
-      "Swift",
-      "SwiftUI",
-      "React",
-      "Next.js",
-      "React Native",
-      "TypeScript",
-      "Expo",
-    ],
+    techs: ["Swift", "SwiftUI", "React", "Next.js", "React Native", "TypeScript", "Expo"],
   },
   {
-    label: "Backend / Infrastructure",
+    label: "Backend / Infra",
     techs: ["Java", "Spring", "PHP", "PostgreSQL", "MySQL", "Docker"],
   },
   {
-    label: "Tools / Collaboration",
-    techs: ["Claude", "Codex", "Antigravity", "Figma", "Jira", "Notion"],
+    label: "Tools",
+    techs: ["Figma", "Jira", "Notion", "Claude", "Codex"],
   },
   {
     label: "AI / Research",
     techs: ["PyTorch", "Transformer", "NLP"],
   },
 ];
+
+const coreSet = new Set(["TypeScript", "React", "React Native", "Expo"]);
 
 const About: React.FC = () => {
   return (
@@ -43,38 +38,40 @@ const About: React.FC = () => {
           <h2 className="section-title">自己紹介</h2>
         </div>
 
+        {/* Plan 07: 5fr / 4fr grid — bio-first, skills secondary */}
         <div className="about-grid">
-          {/* Left: Bio */}
+
+          {/* Left: Bio — Plan 08 */}
           <div className="about-bio">
-            <div className="bio-card">
+            {/* Plan 08: Avatar without border card */}
+            <div className="bio-identity">
               <div className="bio-avatar">
                 <img
                   src={`${import.meta.env.BASE_URL}oriduru_yellow.svg`}
                   alt="Avatar"
-                  style={{ width: "50%", height: "50%", objectFit: "cover" }}
+                  style={{ width: "52%", height: "52%", objectFit: "contain" }}
                 />
               </div>
               <div className="bio-meta">
                 <h3>Lingfang Zhang（張 齢方）</h3>
-                <p className="bio-role">Software Engineer / NLP Researcher</p>
+                <p className="bio-role">Software Engineer &nbsp;/&nbsp; NLP Researcher</p>
               </div>
             </div>
 
+            {/* Plan 08: Narrative paragraphs — no accent-text forcing */}
             <p className="bio-text">
-              早稲田大学大学院で自然言語処理・多言語モデルの研究をしながら、エンジニアとしてプロダクト開発や、日本のIT企業で新規事業開発に携わっています。
+              早稲田大学大学院で自然言語処理・多言語モデルの研究をしながら、エンジニアとしてプロダクト開発や日本のIT企業での新規事業開発に携わっています。
             </p>
-
             <p className="bio-text">
-              私は「現場や日々の暮らしで感じた違和感」を、そのまま課題として持ち込みます。
-              チームの一員として、社会に暮らす人間として、「私たちにいますぐにできることはないか」について考えるのが好きです。
-              <br />
-              アイデアが浮かんだら、すぐ行動に移し、試行錯誤を繰り返しながら形にしていきます。そして——
+              「現場や日々の暮らしで感じた違和感」を、そのまま課題として持ち込みます。
+              チームの一員として、社会に暮らす人間として、いますぐできることを考えるのが好きです。
+              アイデアが浮かんだらすぐ行動に移し、試行錯誤を繰り返しながら形にしていきます。
             </p>
-
-            <p className="bio-text accent-text">
+            <p className="bio-text">
               作ったものが価値を生み出す瞬間が、一番のやりがいです。
             </p>
 
+            {/* Plan 07: Info grid — subtle metadata */}
             <div className="bio-info-row">
               <div className="bio-info-item">
                 <span className="bio-info-label">大学</span>
@@ -84,7 +81,6 @@ const About: React.FC = () => {
                 <span className="bio-info-label">研究</span>
                 <span className="bio-info-value">NLP / mLLM</span>
               </div>
-
               <div className="bio-info-item">
                 <span className="bio-info-label">専攻</span>
                 <span className="bio-info-value">情報理工・情報通信</span>
@@ -96,79 +92,34 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Right: Skills */}
+          {/* Right: Skills — Plans 09, 10, 11 */}
           <div className="about-skills">
-            {/* Tech Stack */}
-            <div
-              className="skills-block"
-              style={{ borderLeft: "2px solid var(--green)" }}
-            >
+
+            {/* Plan 09: Tech stack — no box-shadow card, line-separated */}
+            <div className="skills-block">
               <h4 className="skills-heading">技術スタック</h4>
 
-              {/* Core Stack */}
-              <div style={{ marginBottom: "20px" }}>
-                <span
-                  className="tech-group-label"
-                  style={{ display: "block", marginBottom: "10px" }}
-                >
-                  Core Stack
-                </span>
+              {/* Core stack */}
+              <div className="skills-core">
+                <span className="tech-group-label">Core</span>
                 <div className="tech-tags">
                   {["TypeScript", "React", "React Native", "Expo"].map((t) => (
-                    <span key={t} className="tag">
-                      {t}
-                    </span>
+                    <span key={t} className="tag tag-core">{t}</span>
                   ))}
                 </div>
               </div>
 
-              {/* Compact Stack */}
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "12px",
-                }}
-              >
+              {/* Other stacks — compact rows */}
+              <div className="skills-rows">
                 {techGroups.map(({ label, techs }) => {
-                  const coreSet = new Set([
-                    "React",
-                    "React Native",
-                    "TypeScript",
-                    "Expo",
-                  ]);
                   const remaining = techs.filter((t) => !coreSet.has(t));
                   if (remaining.length === 0) return null;
-
                   return (
-                    <div
-                      key={label}
-                      style={{
-                        display: "flex",
-                        alignItems: "baseline",
-                        gap: "16px",
-                      }}
-                    >
-                      <span
-                        className="tech-group-label"
-                        style={{
-                          display: "block",
-                          width: "120px",
-                          flexShrink: 0,
-                          margin: 0,
-                        }}
-                      >
-                        {label}
-                      </span>
-                      <div className="tech-tags" style={{ gap: "6px" }}>
+                    <div key={label} className="skills-row">
+                      <span className="tech-group-label">{label}</span>
+                      <div className="tech-tags">
                         {remaining.map((t) => (
-                          <span
-                            key={t}
-                            className="tag"
-                            style={{ background: "transparent" }}
-                          >
-                            {t}
-                          </span>
+                          <span key={t} className="tag">{t}</span>
                         ))}
                       </div>
                     </div>
@@ -176,75 +127,46 @@ const About: React.FC = () => {
                 })}
               </div>
             </div>
-            {/* Languages */}
-            <div
-              className="skills-block"
-              style={{ borderLeft: "2px solid var(--accent)" }}
-            >
+
+            {/* Plan 10: Languages — neutral, no colored dots */}
+            <div className="skills-block">
               <h4 className="skills-heading">言語</h4>
               <div className="lang-list">
-                {languages.map(({ lang, level, color }) => (
+                {languages.map(({ lang, level }) => (
                   <div key={lang} className="lang-item">
-                    <div className="lang-dot" style={{ background: color }} />
-                    <div className="lang-info">
-                      <span className="lang-name">{lang}</span>
-                      <span className="lang-level">{level}</span>
-                    </div>
+                    <span className="lang-name">{lang}</span>
+                    <span className="lang-level">{level}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Research */}
-            <div className="research-card">
-              <div className="research-icon">🔬</div>
-              <div>
-                <h4>研究テーマ</h4>
-                <p>
+            {/* Plan 11: Research — blockquote style, no icon */}
+            <div className="research-block">
+              <h4 className="skills-heading">研究テーマ</h4>
+              <div className="research-body">
+                <p className="research-title">
                   <a
                     href="https://www.jstage.jst.go.jp/article/pjsai/JSAI2025/0/JSAI2025_1Win435/_pdf/-char/en"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{
-                      color: "inherit",
-                      textDecoration: "none",
-                      paddingBottom: "1px",
-                    }}
+                    className="research-link"
                   >
                     mBERT を用いた逐次多言語学習
                   </a>
                 </p>
-                <p className="research-sub">
-                  <a
-                    href="research.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      color: "inherit",
-                      textDecoration: "none",
-                      borderBottom: "1px solid currentColor",
-                      paddingBottom: "1px",
-                    }}
-                  >
+                <p className="research-links">
+                  <a href="research.pdf" target="_blank" rel="noopener noreferrer" className="research-doc-link">
                     説明資料
                   </a>
-                  ・
-                  <a
-                    href="poster.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      color: "inherit",
-                      textDecoration: "none",
-                      borderBottom: "1px solid currentColor",
-                      paddingBottom: "1px",
-                    }}
-                  >
+                  <span className="research-sep">·</span>
+                  <a href="poster.pdf" target="_blank" rel="noopener noreferrer" className="research-doc-link">
                     JSAI2025 発表ポスター
                   </a>
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </div>
