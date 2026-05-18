@@ -46,7 +46,7 @@ const projects: Project[] = [
     name: "KNTY24 (KINTAI)",
     tagline: "開発を早く進める仕組みを、未経験チームの中で整備",
     story: "インターンのプログラムで、社内向け勤怠管理アプリを4人チームでアジャイル開発によって構築した。\nReact Native＋TypeScriptを用い、5回のスプリントを通して、要件定義から設計・実装・テスト・レビューまで一貫して行った。\n私はエンジニアとして実装を担う一方、進捗管理やタスク分配、顧客への要件確認も主体的に引き受け、実質 PM の役割を果たした。また、PRルールやコーディング規約、フォーマッターを整備し、レビュー品質の向上に貢献した。さらに、非同期ワークで作業するメンバー間で状況を共有できるよう、Slackのログチャンネル運用を提案・導入し、チームの開発速度の向上を果たした。結果として、私たちは「開発スピードが速く、プロダクトの品質も高い」チームと評価を受けた。",
-    tags: ["React Native", "TypeScript", "Scrum", "Jira", "GitHub"],
+    tags: ["React Native", "TypeScript", "Firebase", "Agile", "Jira", "GitHub"],
     type: "internship",
   },
   {
