@@ -209,7 +209,7 @@ const Projects: React.FC = () => {
         {/* Bottom philosophy */}
         <div className={styles.footer}>
           <p className={styles.quote}>
-            使う人に寄り添ったプロダクトを作り続けます。
+            使う人に寄り添ったプロダクトを作り続けたいです。
           </p>
         </div>
       </div>
