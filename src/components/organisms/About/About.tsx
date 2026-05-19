@@ -40,7 +40,7 @@ const About: React.FC = () => {
   return (
     <div id="about" className={styles.about}>
       <div className="section-container">
-        <SectionHeader label="About" title="自己紹介" />
+        <SectionHeader label="Profile" title="プロフィール" />
 
         {/* Plan 07: 5fr / 4fr grid — bio-first, skills secondary */}
         <div className={styles.grid}>

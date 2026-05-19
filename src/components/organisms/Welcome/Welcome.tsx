@@ -37,8 +37,8 @@ const Welcome: React.FC = () => {
 
           {/* Plan 06: Single CTA */}
           <div className={styles.actions}>
-            <Button variant="primary" onClick={() => scrollTo("projects")}>
-              プロジェクトを見る
+            <Button variant="primary" onClick={() => scrollTo("about")}>
+              プロフィールを見る
             </Button>
           </div>
 
