@@ -1,7 +1,7 @@
-import React from 'react';
-import { Eyebrow } from '../../atoms/Eyebrow';
-import { ExternalLink } from '../../atoms/ExternalLink';
-import styles from './Closing.module.css';
+import React from "react";
+import { Eyebrow } from "../../atoms/Eyebrow";
+import { ExternalLink } from "../../atoms/ExternalLink";
+import styles from "./Closing.module.css";
 
 const Closing: React.FC = () => {
   return (
@@ -10,9 +10,7 @@ const Closing: React.FC = () => {
         <div className={styles.inner}>
           <Eyebrow>Contact</Eyebrow>
 
-          <h2 className={styles.title}>
-            一緒に、何かを作りませんか。
-          </h2>
+          <h2 className={styles.title}>一緒に、何かを作りませんか。</h2>
 
           <p className={styles.text}>
             採用担当者の方、エンジニアの方、ともにプロダクトを作りたい方——
@@ -20,8 +18,11 @@ const Closing: React.FC = () => {
             お気軽にご連絡ください。
           </p>
 
-          <a href="mailto:mamezhlf@gmail.com" className={styles.email}>
-            mamezhlf@gmail.com
+          <a
+            href="mailto:lingfang.zhang@fuji.waseda.jp"
+            className={styles.email}
+          >
+            lingfang.zhang@fuji.waseda.jp
           </a>
 
           <div className={styles.links}>
@@ -45,7 +46,9 @@ const Closing: React.FC = () => {
             <div className={styles.footerDivider} />
             <div className={styles.footerRow}>
               <span>Lingfang Zhang</span>
-              <span className={styles.footerCopy}>早大院 · SWE / NLP · 28卒</span>
+              <span className={styles.footerCopy}>
+                早大院 · SWE / NLP · 28卒
+              </span>
             </div>
           </div>
         </div>
