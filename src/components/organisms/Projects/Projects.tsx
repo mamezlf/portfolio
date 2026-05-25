@@ -28,7 +28,7 @@ const projects: Project[] = [
     story:
       "私はハンドメイドが趣味で、作った作品をフリマアプリで販売している中、利益を把握するのに毎回手動で売上から送料や資材費などを差し引く計算を行う必要があることに違和感を感じた。この違和感を課題として捉え、解決するために 売上と経費の記録・利益自動計算・商品別収支一覧 などの機能を備えたiOSアプリを開発した。日常生活で利用しながら改善を重ね、繰り返し発生する計算作業を効率化した。",
     tags: ["Swift", "SwiftUI", "SwiftData", "iOS"],
-    link: "https://note.com/mamezlf/n/n775888ddc071",
+    link: "https://note.com/mamezlf/n/n896d0dcde280",
     linkLabel: "note 記事を読む",
     images: [
       "URIAGE/home.png",

@@ -36,3 +36,4 @@
 - note：https://note.com/mamezlf
 - GitHub：https://github.com/mamezlf
 - URIAGE 開発記事：https://note.com/mamezlf/n/n775888ddc071
+https://note.com/mamezlf/n/n896d0dcde280
