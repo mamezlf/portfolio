@@ -4,7 +4,7 @@ import styles from './AccordionHeader.module.css';
 
 interface AccordionHeaderProps {
   period: string;
-  typeLabel: string;
+  typeLabels: string[];
   title: string;
   subtitle: string;
   tags: readonly string[];
@@ -14,7 +14,7 @@ interface AccordionHeaderProps {
 
 export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   period,
-  typeLabel,
+  typeLabels,
   title,
   subtitle,
   tags,
@@ -25,7 +25,9 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
     <div className={styles.header} onClick={onToggle} role="button" tabIndex={0} onKeyDown={(e) => e.key === "Enter" && onToggle()}>
       <div className={styles.meta}>
         <span className={styles.period}>{period}</span>
-        <Badge variant="rect">{typeLabel}</Badge>
+        {typeLabels.map((label) => (
+          <Badge key={label} variant="rect">{label}</Badge>
+        ))}
       </div>
       <h3 className={styles.name}>{title}</h3>
       <p className={styles.tagline}>{subtitle}</p>

@@ -16,7 +16,7 @@ interface Project {
   link?: string;
   linkLabel?: string;
   images?: string[];
-  type: "origin" | "team" | "personal" | "internship";
+  type: ("origin" | "team" | "personal" | "internship")[];
 }
 
 const projects: Project[] = [
@@ -39,7 +39,7 @@ const projects: Project[] = [
       "URIAGE/other.png",
       "URIAGE/link.png",
     ],
-    type: "personal",
+    type: ["personal"],
   },
   {
     id: "kintai",
@@ -49,7 +49,42 @@ const projects: Project[] = [
     story:
       "インターンのプログラムで、社内向け勤怠管理アプリを4人チームでアジャイル開発によって構築した。\nReact Native＋TypeScriptを用い、5回のスプリントを通して、要件定義から設計・実装・テスト・レビューまで一貫して行った。\n私はエンジニアとして実装を担う一方、進捗管理やタスク分配、顧客への要件確認も主体的に引き受け、実質 PM の役割を果たした。また、PRルールやコーディング規約、フォーマッターを整備し、レビュー品質の向上に貢献した。さらに、非同期ワークで作業するメンバー間で状況を共有できるよう、Slackのログチャンネル運用を提案・導入し、チームの開発速度の向上を果たした。結果として、私たちは「開発スピードが速く、プロダクトの品質も高い」チームと評価を受けた。",
     tags: ["React Native", "TypeScript", "Firebase", "Agile", "Jira", "GitHub"],
-    type: "internship",
+    type: ["internship", "team"],
+  },
+  {
+    id: "curriculum",
+    period: "大学4年 / 2025.3 – 2025.10",
+    name: "Instructional Design for IT Training",
+    tagline: "未経験者がゴールまで走り切れる、学習体験の設計",
+    story:
+      "IT業界は人材不足が深刻で、就職を希望する文系学生も多い。しかし既存の研修教材は理論とサンプルコードが中心で、未経験者にとって「どこから始めればいいか」がわからず、学習を続けられない構造になっていた。 この課題に向き合い、文系・未経験の学生がWebアプリ開発をゼロから学べるKUMON式カリキュラムを単独で設計・制作した。\n最大の壁は「知識の呪い」だった。変数がなぜ存在するのか、インデントに意味があること——コードを書く上でのあらゆる「デフォルト知識」を意識的に言語化し直すところから始めた。\n技術を教えることより先に、「学習者はどこで詰まるか」「どこで諦めるか」を設計の軸に置いた。理論→練習→実践のループを繰り返し、要所にチェックポイントと成功体験を配置。また、森の小動物キャラクターによる世界観を作り込み、長い学習過程でも継続できる体験を設計した。\n完成後、文系出身の社員3名が全員完走。現在も実際の研修として継続運用されている。",
+    tags: [ "UI/UX Design", "Full-Stack Engineering"],
+    type: ["internship"],
+  },
+  {
+    id: "training-support",
+    period: "大学4年 / 2025.6 – 2025.12",
+    name: "Training Support",
+    tagline: "未経験者の学習過程に伴走し、教材と支援体制を改善",
+    story:
+      "未経験者向けIT研修の講師・学習支援を担当した。対象は、実運用前の社内テストに参加した社員と、実際に研修を受講する20名以上の学生で、質問対応・コードレビュー・面談を通じて学習状況を把握した。\n現場では受講者のつまずき方を観察し、学生ごとの理解度や取り組み方を記録した。そこで得られたフィードバックをもとに、教材の説明順序や演習内容を継続的に改善した。\nこの研修の価値は、学生が学習を完走することに加え、研修中に蓄積された学生に関する情報データを企业に提供し、采用判断に活用できるようにする点にあった。単に教えるだけでなく、学生の成长过程を可视化し、教材制作だけでは见えなかった学习者のリアルな课题を支援体制に反映させた。",
+    tags: ["Code Review", "Mentoring", "Feedback Analysis", "Learning Support"],
+    type: ["internship"],
+  },
+  {
+    id: "bridgeapp",
+    period: "大学4年 / 2025.10 – 2026.3",
+    name: "Job Matching Platform",
+    tagline: "「なぜ作るか」から考えた、初めての上流工程",
+    story:
+      "「企業に自分を正しく届けられない」、「自分に合う場所を見つけられない」\n「即戦力が欲しいのにそんな学生となかなか巡り合えない」——\n既存の就職市場には、学生・企業双方にとってミスマッチが生まれやすい構造がある。私たちは、未経験学生向けのIT研修を運営し、研修を通じて蓄積された学生データを活かし、ミスマッチが生まれやすい構造を変えられると考えた。その一環として、私は学生と企業のマッチングプラットフォームのAI駆動開発に携わった。\n実務レベルの上流工程は初めてだったこらこそ、「何を作るか」より「なぜ作るか」を先に考え抜いた。その手段として、Lean Canvasでビジネスモデルを整理した。その結果、課題・提供価値・収益構造が一本の線でつながり、設計の軸が定まった。学生・企業それぞれのユーザーフローを設計し、Atomic Designの考え方で画面を分解しながら、詳細設計まで完成させた。離脱後もチームの基盤資産として継続活用されている。",
+    tags: [
+      "Product Engineering",
+      "UI/UX Design",
+      "System Design",
+      "AI Driven Development",
+    ],
+    type: ["internship"],
   },
   {
     id: "wasecord",
@@ -71,7 +106,7 @@ const projects: Project[] = [
     ],
     link: "wasecord/Group1A.pdf",
     linkLabel: "説明資料を見る",
-    type: "team",
+    type: ["team"],
   },
   {
     id: "lovepoem",
@@ -83,47 +118,7 @@ const projects: Project[] = [
     tags: ["HTML", "CSS", "JavaScript", "C"],
     link: "https://mamezlf.github.io/lovepoem/index.html",
     linkLabel: "Webサイトを見る",
-    type: "origin",
-  },
-  {
-    id: "curriculum",
-    period: "大学4年 / 2025.3 – 2025.10",
-    name: "CURRICULUM",
-    tagline: "未経験者がゴールまで走り切れる、学習体験の設計",
-    story:
-      "IT業界は人材不足が深刻で、就職を希望する文系学生も多い。しかし既存の研修教材は理論とサンプルコードが中心で、未経験者にとって「どこから始めればいいか」がわからず、学習を続けられない構造になっていた。 この課題に向き合い、文系・未経験の学生がWebアプリ開発をゼロから学べるKUMON式カリキュラムを単独で設計・制作した。\n最大の壁は「知識の呪い」だった。変数がなぜ存在するのか、インデントに意味があること——コードを書く上でのあらゆる「デフォルト知識」を意識的に言語化し直すところから始めた。\n技術を教えることより先に、「学習者はどこで詰まるか」「どこで諦めるか」を設計の軸に置いた。理論→練習→実践のループを繰り返し、要所にチェックポイントと成功体験を配置。また、森の小動物キャラクターによる世界観を作り込み、長い学習過程でも継続できる体験を設計した。\n完成後、文系出身の社員3名が全員完走。現在も実際の研修として継続運用されている。",
-    tags: ["Instructional Design", "UI/UX Design", "Full-Stack Engineering"],
-    type: "internship",
-  },
-  {
-    id: "training-support",
-    period: "大学4年 / 2025.6 – 2025.12",
-    name: "TRAINING SUPPORT",
-    tagline: "未経験者の学習過程に伴走し、教材と支援体制を改善",
-    story:
-      "未経験者向けIT研修の講師・学習支援を担当した。対象は、実運用前の社内テストに参加した社員と、実際に研修を受講する20名以上の学生で、質問対応・コードレビュー・面談を通じて学習状況を把握した。\n現場では受講者のつまずき方を観察し、学生ごとの理解度や取り組み方を記録した。そこで得られたフィードバックをもとに、教材の説明順序や演習内容を継続的に改善した。\nこの研修の価値は、学生が学習を完走することに加え、研修中に蓄積された学生に関する情報データを企業に提供し、採用判断に活用できるようにする点にあった。単に教えるだけでなく、学生の成長過程を可視化し、教材制作だけでは見えなかった学習者のリアルな課題を支援体制に反映させた。",
-    tags: [
-      "Code Review",
-      "Mentoring",
-      "Feedback Analysis",
-      "Learning Support",
-    ],
-    type: "internship",
-  },
-  {
-    id: "bridgeapp",
-    period: "大学4年 / 2025.10 – 2026.3",
-    name: "BRIDGEAPP",
-    tagline: "「なぜ作るか」から考えた、初めての上流工程",
-    story:
-      "「企業に自分を正しく届けられない」、「自分に合う場所を見つけられない」\n「即戦力が欲しいのにそんな学生となかなか巡り合えない」——\n既存の就職市場には、学生・企業双方にとってミスマッチが生まれやすい構造がある。私たちは、未経験学生向けのIT研修を運営し、研修を通じて蓄積された学生データを活かし、ミスマッチが生まれやすい構造を変えられると考えた。その一環として、私は学生と企業のマッチングプラットフォームのAI駆動開発に携わった。\n実務レベルの上流工程は初めてだったこらこそ、「何を作るか」より「なぜ作るか」を先に考え抜いた。その手段として、Lean Canvasでビジネスモデルを整理した。その結果、課題・提供価値・収益構造が一本の線でつながり、設計の軸が定まった。学生・企業それぞれのユーザーフローを設計し、Atomic Designの考え方で画面を分解しながら、詳細設計まで完成させた。離脱後もチームの基盤資産として継続活用されている。",
-    tags: [
-      "Product Engineering",
-      "UI/UX Design",
-      "System Design",
-      "AI Driven Development",
-    ],
-    type: "internship",
+    type: ["origin"],
   },
 ];
 
@@ -157,7 +152,7 @@ const Projects: React.FC = () => {
   const filtered =
     activeFilter === "all"
       ? projects
-      : projects.filter((p) => p.type === activeFilter);
+      : projects.filter((p) => p.type.includes(activeFilter));
 
   return (
     <div id="projects" className={styles.projects}>
@@ -182,7 +177,7 @@ const Projects: React.FC = () => {
               key={project.id}
               id={project.id}
               period={project.period}
-              typeLabel={typeLabel[project.type]}
+              typeLabels={project.type.map((t) => typeLabel[t])}
               title={project.name}
               subtitle={project.tagline}
               tags={project.tags}

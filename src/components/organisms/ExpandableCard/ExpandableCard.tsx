@@ -5,7 +5,7 @@ import styles from './ExpandableCard.module.css';
 interface ExpandableCardProps {
   id: string;
   period: string;
-  typeLabel: string;
+  typeLabels: string[];
   title: string;
   subtitle: string;
   tags: readonly string[];
@@ -17,7 +17,7 @@ interface ExpandableCardProps {
 export const ExpandableCard: React.FC<ExpandableCardProps> = ({
   id,
   period,
-  typeLabel,
+  typeLabels,
   title,
   subtitle,
   tags,
@@ -29,7 +29,7 @@ export const ExpandableCard: React.FC<ExpandableCardProps> = ({
     <div className={styles.item}>
       <AccordionHeader
         period={period}
-        typeLabel={typeLabel}
+        typeLabels={typeLabels}
         title={title}
         subtitle={subtitle}
         tags={tags}
