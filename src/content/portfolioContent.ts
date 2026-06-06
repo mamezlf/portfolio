@@ -68,7 +68,7 @@ export const projectsContent = {
     subtitle:
       "日常で気づいた違和感を課題として捉え、プロダクトを通じて価値へ変えることに取り組んできました。",
   },
-  footerQuote: "誰かの生活を少しでも良くするプロダクトを作り続けたいです。",
+  footerQuote: "誰かの生活をより豊かにできるプロダクトを作り続けます。",
   filterOptions: [
     { key: "all", label: "すべて" },
     { key: "personal", label: "個人開発" },
