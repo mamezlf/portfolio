@@ -4,6 +4,7 @@ import About from './components/organisms/About';
 import Projects from './components/organisms/Projects';
 import Closing from './components/organisms/Closing';
 import navStyles from './components/organisms/Nav/Nav.module.css';
+import { navContent } from './content/portfolioContent';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('welcome');
@@ -38,12 +39,12 @@ const App: React.FC = () => {
     <>
       <nav className={navStyles.nav}>
         <div className={navStyles.inner}>
-          <span className={navStyles.logo} onClick={() => scrollTo('welcome')}>Lingfang ·</span>
+          <span className={navStyles.logo} onClick={() => scrollTo('welcome')}>{navContent.logo}</span>
           <ul className={navStyles.links}>
-            <li><a className={`${navStyles.link} ${activeSection === 'welcome' ? navStyles.linkActive : ''}`.trim()} href="#welcome">Top</a></li>
-            <li><a className={`${navStyles.link} ${activeSection === 'about' ? navStyles.linkActive : ''}`.trim()} href="#about">About</a></li>
-            <li><a className={`${navStyles.link} ${activeSection === 'projects' ? navStyles.linkActive : ''}`.trim()} href="#projects">Projects</a></li>
-            <li><a className={`${navStyles.link} ${activeSection === 'closing' ? navStyles.linkActive : ''}`.trim()} href="#closing">Contact</a></li>
+            <li><a className={`${navStyles.link} ${activeSection === 'welcome' ? navStyles.linkActive : ''}`.trim()} href="#welcome">{navContent.links.top}</a></li>
+            <li><a className={`${navStyles.link} ${activeSection === 'about' ? navStyles.linkActive : ''}`.trim()} href="#about">{navContent.links.about}</a></li>
+            <li><a className={`${navStyles.link} ${activeSection === 'projects' ? navStyles.linkActive : ''}`.trim()} href="#projects">{navContent.links.projects}</a></li>
+            <li><a className={`${navStyles.link} ${activeSection === 'closing' ? navStyles.linkActive : ''}`.trim()} href="#closing">{navContent.links.contact}</a></li>
           </ul>
         </div>
       </nav>

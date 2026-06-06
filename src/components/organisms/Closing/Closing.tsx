@@ -1,6 +1,7 @@
 import React from "react";
 import { Eyebrow } from "../../atoms/Eyebrow";
 import { ExternalLink } from "../../atoms/ExternalLink";
+import { closingContent } from "../../../content/portfolioContent";
 import styles from "./Closing.module.css";
 
 const Closing: React.FC = () => {
@@ -8,46 +9,42 @@ const Closing: React.FC = () => {
     <div className={styles.closing}>
       <div className={`section-container ${styles.container}`}>
         <div className={styles.inner}>
-          <Eyebrow>Contact</Eyebrow>
+          <Eyebrow>{closingContent.label}</Eyebrow>
 
-          <h2 className={styles.title}>一緒に、何かを作りませんか。</h2>
+          <h2 className={styles.title}>{closingContent.title}</h2>
 
           <p className={styles.text}>
-            採用担当者の方、エンジニアの方、ともにプロダクトを作りたい方——
+            {closingContent.textLines[0]}
             <br />
-            お気軽にご連絡ください。
+            {closingContent.textLines[1]}
           </p>
 
           <a
-            href="mailto:lingfang.zhang@fuji.waseda.jp"
+            href={`mailto:${closingContent.email}`}
             className={styles.email}
           >
-            lingfang.zhang@fuji.waseda.jp
+            {closingContent.email}
           </a>
 
           <div className={styles.links}>
-            <ExternalLink
-              href="https://note.com/mamezlf"
-              className="closing-text-link"
-            >
-              <span className={styles.clinkPlatform}>note</span>
-              <span className={styles.clinkHandle}>@mamezlf</span>
-            </ExternalLink>
-            <ExternalLink
-              href="https://github.com/mamezlf"
-              className="closing-text-link"
-            >
-              <span className={styles.clinkPlatform}>GitHub</span>
-              <span className={styles.clinkHandle}>mamezlf</span>
-            </ExternalLink>
+            {closingContent.links.map(({ href, platform, handle }) => (
+              <ExternalLink
+                key={href}
+                href={href}
+                className="closing-text-link"
+              >
+                <span className={styles.clinkPlatform}>{platform}</span>
+                <span className={styles.clinkHandle}>{handle}</span>
+              </ExternalLink>
+            ))}
           </div>
 
           <div>
             <div className={styles.footerDivider} />
             <div className={styles.footerRow}>
-              <span>Lingfang Zhang</span>
+              <span>{closingContent.footerName}</span>
               <span className={styles.footerCopy}>
-                早大院 · SWE / NLP · 28卒
+                {closingContent.footerCopy}
               </span>
             </div>
           </div>

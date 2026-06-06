@@ -5,15 +5,8 @@ import { KeyValueRow } from "../../molecules/KeyValueRow";
 import { Eyebrow } from "../../atoms/Eyebrow";
 import { Badge } from "../../atoms/Badge";
 import { ExternalLink } from "../../atoms/ExternalLink";
+import { aboutContent } from "../../../content/portfolioContent";
 import styles from "./About.module.css";
-
-/* Plan 10: Neutral language colors — remove visual noise */
-const languages = [
-  { lang: "中国語", level: "ネイティブ" },
-  { lang: "日本語", level: "N1（満点）/ ビジネス" },
-  { lang: "英語", level: "TOEIC 895 · TOEFL 91 / ビジネス" },
-  { lang: "韓国語", level: "日常会話" },
-];
 
 const techGroups = [
   {
@@ -40,7 +33,10 @@ const About: React.FC = () => {
   return (
     <div id="about" className={styles.about}>
       <div className="section-container">
-        <SectionHeader label="Profile" title="プロフィール" />
+        <SectionHeader
+          label={aboutContent.header.label}
+          title={aboutContent.header.title}
+        />
 
         {/* Plan 07: 5fr / 4fr grid — bio-first, skills secondary */}
         <div className={styles.grid}>
@@ -51,30 +47,25 @@ const About: React.FC = () => {
             <div className={styles.identity}>
               <Avatar src={`${import.meta.env.BASE_URL}oriduru_yellow.svg`} alt="Avatar" />
               <div className={styles.meta}>
-                <h3>Lingfang Zhang（張 齢方）</h3>
-                <p className={styles.role}>Software Engineer &nbsp;/&nbsp; NLP Researcher</p>
+                <h3>{aboutContent.name}</h3>
+                <p className={styles.role}>{aboutContent.role}</p>
               </div>
             </div>
 
             {/* Plan 08: Narrative paragraphs — no accent-text forcing */}
-            <p className={styles.text}>
-              早稲田大学大学院で自然言語処理・多言語モデルの研究をしながら、エンジニアとしてプロダクト開発や日本のIT企業での新規事業開発に携わっています。
-            </p>
-            <p className={styles.text}>
-              「現場や日々の暮らしで感じた違和感」を、そのまま課題として持ち込みます。
-              チームの一員として、社会に暮らす人間として、いますぐできることを考えるのが好きです。
-              アイデアが浮かんだらすぐ行動に移し、試行錯誤を繰り返しながら形にしていきます。
-            </p>
-            <p className={styles.text}>
-              作ったものが価値を生み出す瞬間が、一番のやりがいです。
-            </p>
+            {aboutContent.paragraphs.map((text) => (
+              <p key={text} className={styles.text}>{text}</p>
+            ))}
 
             {/* Plan 07: Info grid — subtle metadata */}
             <div className={styles.infoRow}>
-              <KeyValueRow label="大学" value="早稲田大学大学院" />
+              {aboutContent.infoRows.slice(0, 1).map(({ label, value }) => (
+                <KeyValueRow key={label} label={label} value={value} />
+              ))}
               <KeyValueRow label="研究" value="NLP / mLLM" />
-              <KeyValueRow label="専攻" value="情報理工・情報通信" />
-              <KeyValueRow label="卒業予定" value="2028年3月 修士卒" />
+              {aboutContent.infoRows.slice(1).map(({ label, value }) => (
+                <KeyValueRow key={label} label={label} value={value} />
+              ))}
             </div>
           </div>
 
@@ -116,9 +107,9 @@ const About: React.FC = () => {
 
             {/* Plan 10: Languages — neutral, no colored dots */}
             <div className={styles.skillsBlock}>
-              <Eyebrow as="h4" className="skills-heading">言語</Eyebrow>
+              <Eyebrow as="h4" className="skills-heading">{aboutContent.languagesHeading}</Eyebrow>
               <div className={styles.langList}>
-                {languages.map(({ lang, level }) => (
+                {aboutContent.languages.map(({ lang, level }) => (
                   <KeyValueRow key={lang} variant="lang" label={lang} value={level} />
                 ))}
               </div>

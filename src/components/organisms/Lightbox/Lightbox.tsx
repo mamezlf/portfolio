@@ -74,7 +74,7 @@ export const Lightbox: React.FC<LightboxProps> = ({ state, onClose, onChangeStat
               ? styles.slideFromRight
               : state.direction === "right"
               ? styles.slideFromLeft
-              : ""
+              : styles.initialZoom
           }`.trim()}
         />
         {state.images.length > 1 && (
