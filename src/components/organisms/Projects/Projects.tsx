@@ -45,7 +45,7 @@ const Projects: React.FC = () => {
         />
 
         {/* Plan 12: Narrative card flow — no timeline nodes or vertical lines */}
-        <div className={styles.list}>
+        <div key={activeFilter} className={styles.list}>
           {filtered.map((project) => (
             <ExpandableCard
               key={project.id}

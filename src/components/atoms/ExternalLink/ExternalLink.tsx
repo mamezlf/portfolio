@@ -8,7 +8,6 @@ interface ExternalLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement
 
 export const ExternalLink: React.FC<ExternalLinkProps> = ({ 
   children, 
-  variant = 'inline', 
   className = '', 
   ...props 
 }) => {
