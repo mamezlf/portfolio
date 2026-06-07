@@ -1,6 +1,7 @@
-# cportfolio
+# portfolio
 
 ポートフォリオサイト。React + TypeScript を使用。
+リンク：https://www.mamezlf.com/
 
 ## 技術スタック
 
@@ -14,14 +15,9 @@
 |---|---|
 | Welcome | ヒーローセクション・キャッチコピー |
 | About | 自己紹介・言語・技術スタック |
-| Projects | 開発プロジェクト3本（タイムライン形式） |
+| Projects | 開発プロジェクト |
 | Closing | コンタクト・リンク |
 
-## デザイン方針
-
-- カラーテーマ：ダーク背景 × アンバー（`#d4a96a`）アクセント
-- フォント：Sora（見出し）/ Noto Sans JP（本文）/ JetBrains Mono（ラベル・タグ）
-- プロジェクトカードはクリックで詳細展開
 
 ## プロジェクト一覧
 
@@ -35,5 +31,6 @@
 
 - note：https://note.com/mamezlf
 - GitHub：https://github.com/mamezlf
-- URIAGE 開発記事：https://note.com/mamezlf/n/n775888ddc071
-https://note.com/mamezlf/n/n896d0dcde280
+- URIAGE 開発記事：
+  - https://note.com/mamezlf/n/n775888ddc071
+  - https://note.com/mamezlf/n/n896d0dcde280
