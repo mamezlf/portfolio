@@ -1,6 +1,10 @@
-# cportfolio
+# portfolio
 
 ポートフォリオサイト。React + TypeScript を使用。
+リンク：https://www.mamezlf.com/
+
+## 開発目的
+企業が自社の理念やサービスをWebサイトで発信するように、私自身も候補者として、自分の経験や成果物を最も伝わりやすい形で届けたいと考え、ポートフォリオサイトを作成しました。企業の方が私にご興味をお持ちになったときに、プロジェクト経験やスキルをできるだけ簡単にご確認いただけるよう意識しました。ポートフォリオを通して、それぞれのプロジェクトでどのような課題意識を持ち、どのように行動してきたのかを伝えたいと考えています。
 
 ## 技術スタック
 
@@ -14,26 +18,13 @@
 |---|---|
 | Welcome | ヒーローセクション・キャッチコピー |
 | About | 自己紹介・言語・技術スタック |
-| Projects | 開発プロジェクト3本（タイムライン形式） |
+| Projects | 開発プロジェクト |
 | Closing | コンタクト・リンク |
-
-## デザイン方針
-
-- カラーテーマ：ダーク背景 × アンバー（`#d4a96a`）アクセント
-- フォント：Sora（見出し）/ Noto Sans JP（本文）/ JetBrains Mono（ラベル・タグ）
-- プロジェクトカードはクリックで詳細展開
-
-## プロジェクト一覧
-
-| # | 名前 | 時期 | 種別 |
-|---|---|---|---|
-| 1 | CCN Timestamp Web | 大学1年 | 個人・原点 |
-| 2 | Wasecord | 大学2〜3年 | チーム開発 |
-| 3 | URIAGE | 大学院 | 個人開発 |
 
 ## 関連リンク
 
 - note：https://note.com/mamezlf
 - GitHub：https://github.com/mamezlf
-- URIAGE 開発記事：https://note.com/mamezlf/n/n775888ddc071
-https://note.com/mamezlf/n/n896d0dcde280
+- URIAGE 開発記事：
+  - https://note.com/mamezlf/n/n775888ddc071
+  - https://note.com/mamezlf/n/n896d0dcde280
