@@ -195,7 +195,7 @@ export const projectsContent = {
       tags: ["HTML", "CSS", "JavaScript", "C"],
       link: "https://mamezlf.github.io/lovepoem/index.html",
       linkLabel: "Webサイトを見る",
-      type: ["origin"],
+      type: ["origin", "personal"],
     },
   ] satisfies ProjectContent[],
 };
