@@ -100,6 +100,8 @@ export const projectsContent = {
         "URIAGE/record_list.png",
         "URIAGE/record.png",
         "URIAGE/analysis.png",
+        "URIAGE/delivery.png",
+        "URIAGE/delivery_scrolled.png",
         "URIAGE/other.png",
         "URIAGE/link.png",
       ],
