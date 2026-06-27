@@ -30,6 +30,8 @@ const techGroups = [
 const coreSet = new Set(["TypeScript", "React", "React Native", "Expo"]);
 
 const About: React.FC = () => {
+  const selfIntroductionPdfHref = `${import.meta.env.BASE_URL}${encodeURI("張 齢方 | 自己紹介資料.pdf")}`;
+
   return (
     <div id="about" className={styles.about}>
       <div className="section-container">
@@ -57,6 +59,13 @@ const About: React.FC = () => {
               <p key={text} className={styles.text}>{text}</p>
             ))}
 
+
+            <p className={styles.profileLinks}>
+              <ExternalLink href={selfIntroductionPdfHref} className="research-doc-link">
+                自己紹介資料を見る
+              </ExternalLink>
+            </p>
+
             {/* Plan 07: Info grid — subtle metadata */}
             <div className={styles.infoRow}>
               {aboutContent.infoRows.slice(0, 1).map(({ label, value }) => (
@@ -67,6 +76,7 @@ const About: React.FC = () => {
                 <KeyValueRow key={label} label={label} value={value} />
               ))}
             </div>
+
           </div>
 
           {/* Right: Skills — Plans 09, 10, 11 */}
