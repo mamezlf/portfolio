@@ -52,8 +52,19 @@
 }
 
 .actions {
-  margin-bottom: var(--spacing-3xl);
+  margin-bottom: var(--spacing-2xl);
   animation: fadeUp 0.9s var(--ease) 0.56s both;
+}
+
+.profileLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  animation: fadeUp 0.9s var(--ease) 0.62s both;
 }
 
 .scroll {

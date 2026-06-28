@@ -52,16 +52,6 @@
   border-top: 1px solid var(--border);
 }
 
-.profileLinks {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-md);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-muted);
-}
-
 .skills {
   display: flex;
   flex-direction: column;
