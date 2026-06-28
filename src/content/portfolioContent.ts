@@ -66,7 +66,7 @@ export const projectsContent = {
     label: "Projects",
     title: "開発経験",
     subtitle:
-      "日常で気づいた違和感を課題として捉え、プロダクトを通じて価値へ変えることに取り組んできました。",
+      "日常で気づいた違和感を課題として捉え、技術を手段にプロダクトを価値に変えることに取り組んできました。",
   },
   footerQuote: "誰かの生活をより豊かにできるプロダクトを作り続けます。",
   filterOptions: [
