@@ -209,7 +209,7 @@ export const closingContent = {
     "採用担当者の方、エンジニアの方、ともにプロダクトを作りたい方——",
     "お気軽にご連絡ください。",
   ],
-  email: "lingfang.zhang@fuji.waseda.jp",
+  email: "mamezh@gmail.com",
   links: [
     {
       href: "https://note.com/mamezlf",
