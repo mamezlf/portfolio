@@ -1,10 +1,13 @@
 import React from 'react';
 import { Eyebrow } from '../../atoms/Eyebrow';
 import { Button } from '../../atoms/Button';
+import { ExternalLink } from '../../atoms/ExternalLink';
 import { welcomeContent } from '../../../content/portfolioContent';
 import styles from './Welcome.module.css';
 
 const Welcome: React.FC = () => {
+  const selfIntroductionPdfHref = `${import.meta.env.BASE_URL}${encodeURI("張 齢方 | 自己紹介資料.pdf")}`;
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -43,6 +46,12 @@ const Welcome: React.FC = () => {
               {welcomeContent.cta}
             </Button>
           </div>
+
+          <p className={styles.profileLinks}>
+            <ExternalLink href={selfIntroductionPdfHref} className="research-doc-link">
+              自己紹介資料を見る
+            </ExternalLink>
+          </p>
 
           {/* Plan 06: Scroll indicator — pure line only, no icon */}
           <div className={styles.scroll}>
