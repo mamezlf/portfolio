@@ -3,10 +3,11 @@ import Welcome from './components/organisms/Welcome';
 import About from './components/organisms/About';
 import Projects from './components/organisms/Projects';
 import Closing from './components/organisms/Closing';
+import UriagePrivacyPolicy from './pages/UriagePrivacyPolicy';
 import navStyles from './components/organisms/Nav/Nav.module.css';
 import { navContent } from './content/portfolioContent';
 
-const App: React.FC = () => {
+const PortfolioHome: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('welcome');
 
   useEffect(() => {
@@ -72,6 +73,16 @@ const App: React.FC = () => {
       </main>
     </>
   );
+};
+
+const App: React.FC = () => {
+  const normalizedPath = window.location.pathname.replace(/\/$/, '') || '/';
+
+  if (normalizedPath === '/privacy/uriage') {
+    return <UriagePrivacyPolicy />;
+  }
+
+  return <PortfolioHome />;
 };
 
 export default App;
