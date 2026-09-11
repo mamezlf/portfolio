@@ -26,7 +26,7 @@ export const navContent = {
 
 export const welcomeContent = {
   eyebrow: "早稲田大学大学院 · 情報理工・情報通信専攻",
-  titleLines: ["課題をプロダクトに変え、", "価値として届ける。"],
+  titleLines: ["張 齢方"],
   role: "ソフトウェアエンジニア / NLP 研究者",
   philosophyLines: [
     "「現場や日々の暮らしで感じた違和感」を起点に、",
