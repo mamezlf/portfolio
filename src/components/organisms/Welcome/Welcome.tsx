@@ -35,9 +35,21 @@ const Welcome: React.FC = () => {
 
           {/* Plan 05: Philosophy — inline paragraph, not a card box */}
           <p className={styles.philosophy}>
-            {welcomeContent.philosophyLines[0]}
-            <br />
-            {welcomeContent.philosophyLines[1]}
+            {welcomeContent.philosophyLines.map((line) => (
+              <React.Fragment key={line}>
+                <span>{line}</span>
+                {line === welcomeContent.philosophyLines[0] && (
+                  <>
+                    <ExternalLink
+                      href={welcomeContent.appStoreLink}
+                      className={`research-doc-link ${styles.appStoreLink}`}
+                    >
+                      App Storeで見る
+                    </ExternalLink>
+                  </>
+                )}
+              </React.Fragment>
+            ))}
           </p>
 
           {/* Plan 06: Single CTA */}

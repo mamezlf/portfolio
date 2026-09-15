@@ -51,6 +51,16 @@
   max-width: 520px;
 }
 
+.appStoreLink {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: var(--spacing-xs);
+  width: fit-content;
+  overflow-wrap: anywhere;
+}
+
 .actions {
   margin-bottom: var(--spacing-xl);
   animation: fadeUp 0.9s var(--ease) 0.56s both;
@@ -87,4 +97,5 @@
   .title {
     font-size: clamp(28px, 8vw, 40px);
   }
+
 }

@@ -8,6 +8,8 @@ export interface ProjectContent {
   tagline: string;
   story: string;
   tags: string[];
+  appStoreLink?: string;
+  appStoreLinkLabel?: string;
   link?: string;
   linkLabel?: string;
   images?: string[];
@@ -28,10 +30,8 @@ export const welcomeContent = {
   eyebrow: "早稲田大学大学院 · 情報理工・情報通信専攻",
   titleLines: ["張 齢方"],
   role: "ソフトウェアエンジニア / NLP 研究者",
-  philosophyLines: [
-    "「現場や日々の暮らしで感じた違和感」を起点に、",
-    "課題を見つけ、プロダクトを通じて価値へ変えてきました。",
-  ],
+  philosophyLines: ["初の iOS アプリをリリースしました！"],
+  appStoreLink: "https://apps.apple.com/app/uriage/id6811047211",
   cta: "プロフィールを見る",
 };
 
@@ -44,7 +44,8 @@ export const aboutContent = {
   role: "Software Engineer / NLP Researcher",
   paragraphs: [
     "早稲田大学大学院で自然言語処理・多言語モデルの研究をしながら、エンジニアとしてプロダクト開発や日本のIT企業での新規事業開発に携わっています。",
-    "「現場や日々の暮らしで感じた違和感」を、そのまま課題として持ち込みます。チームの一員として、社会に暮らす人間として、身の回りの小さな不便や摩擦に気がつきます。気になったことは放置できず、自分にできることを考え、思い浮かんだことを行動に移し、試行錯誤を繰り返しながら形にしていきます。",
+    "「現場や日々の暮らしで感じた違和感」を、そのまま課題として持ち込みます。チームの一員として、社会に暮らす人間として、身の回りの小さな不便や摩擦に気がつき、行動に移し、試行錯誤を繰り返しながら形にしていきます。",
+    "その結果、できたのが、App Store で公開済みのメルカリ売上管理アプリ URIAGE です。",
     "作ったものが価値を生み出す瞬間が、一番のやりがいです。",
   ],
   infoRows: [
@@ -90,8 +91,10 @@ export const projectsContent = {
       name: "URIAGE",
       tagline: "個人フリマ販売者の収支管理を、アプリで一元化",
       story:
-        "私はハンドメイドが趣味で、作った作品をフリマアプリで販売している中で、売上から送料・梱包材・仕入れ原価を差し引いた実利益を把握しにくいという課題を感じ、AIを活用して売上管理アプリ URIAGE を企画・開発した。要件定義から設計・実装・運用まで一貫して行い、商品価格・送料・販売手数料・梱包費などを一元管理できるようにした。また、商品URLから商品情報を自動取得する機能を実装し、ユーザーが手入力する負担を減らせるよう工夫した。現在は自分のスマホで実際に運用しながら改善を重ね、売上管理を大きく効率化できている。今は App Store で公開する準備を進めている。",
+        "私はハンドメイドが趣味で、作った作品をフリマアプリで販売している中で、売上から送料・梱包材・仕入れ原価を差し引いた実利益を把握しにくいという課題を感じ、AI を活用して売上管理アプリ URIAGE を企画・開発した。要件定義から設計・実装・運用まで一貫して行い、商品価格・送料・販売手数料・梱包費などを一元管理できるようにした。また、商品URLから商品情報を自動取得する機能を実装し、ユーザーが手入力する負担を減らせるよう工夫した。現在は自分のスマホで実際に運用しながら改善を重ね、売上管理を大きく効率化できている。今は App Store で公開する準備を進めている。",
       tags: ["Swift", "SwiftUI", "SwiftData", "iOS"],
+      appStoreLink: "https://apps.apple.com/app/uriage/id6811047211",
+      appStoreLinkLabel: "App Storeで見る",
       link: "https://note.com/mamezlf/n/n775888ddc071",
       linkLabel: "note 記事を読む",
       images: [

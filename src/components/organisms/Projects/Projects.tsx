@@ -81,10 +81,25 @@ const Projects: React.FC = () => {
                 </div>
               )}
 
-              {project.link && (
-                <ExternalLink href={project.link} className="project-link">
-                  {project.linkLabel || projectsContent.defaultLinkLabel} →
-                </ExternalLink>
+              {(project.appStoreLink || project.link) && (
+                <div className={styles.projectLinks}>
+                  {project.appStoreLink && (
+                    <ExternalLink
+                      href={project.appStoreLink}
+                      className={`project-link ${styles.projectLinkItem}`}
+                    >
+                      {project.appStoreLinkLabel || "App Storeで見る"} →
+                    </ExternalLink>
+                  )}
+                  {project.link && (
+                    <ExternalLink
+                      href={project.link}
+                      className={`project-link ${styles.projectLinkItem}`}
+                    >
+                      {project.linkLabel || projectsContent.defaultLinkLabel} →
+                    </ExternalLink>
+                  )}
+                </div>
               )}
             </ExpandableCard>
           ))}
