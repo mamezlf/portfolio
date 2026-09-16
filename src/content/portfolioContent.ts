@@ -28,7 +28,7 @@ export const navContent = {
 
 export const welcomeContent = {
   eyebrow: "早稲田大学大学院 · 情報理工・情報通信専攻",
-  titleLines: ["張 齢方"],
+  titleLines: ["張 齢方 (Lingfang Zhang)"],
   role: "ソフトウェアエンジニア / NLP 研究者",
   philosophyLines: ["初の iOS アプリをリリースしました！"],
   appStoreLink: "https://apps.apple.com/app/uriage/id6811047211",
