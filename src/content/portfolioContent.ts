@@ -31,7 +31,7 @@ export const welcomeContent = {
   titleLines: ["張 齢方 (Lingfang Zhang)"],
   role: "ソフトウェアエンジニア / NLP 研究者",
   philosophyLines: ["初の iOS アプリをリリースしました！"],
-  appStoreLink: "https://apps.apple.com/app/uriage/id6811047211",
+  appStoreLink: "https://apps.apple.com/jp/app/uriage/id6811047211",
   cta: "プロフィールを見る",
 };
 
@@ -93,7 +93,7 @@ export const projectsContent = {
       story:
         "私はハンドメイドが趣味で、作った作品をフリマアプリで販売している中で、売上から送料・梱包材・仕入れ原価を差し引いた実利益を把握しにくいという課題を感じ、AI を活用して売上管理アプリ URIAGE を企画・開発した。要件定義から設計・実装・運用まで一貫して行い、商品価格・送料・販売手数料・梱包費などを一元管理できるようにした。また、商品URLから商品情報を自動取得する機能を実装し、ユーザーが手入力する負担を減らせるよう工夫した。現在は自分のスマホで実際に運用しながら改善を重ね、売上管理を大きく効率化できている。今は App Store で公開する準備を進めている。",
       tags: ["Swift", "SwiftUI", "SwiftData", "iOS"],
-      appStoreLink: "https://apps.apple.com/app/uriage/id6811047211",
+      appStoreLink: "https://apps.apple.com/jp/app/uriage/id6811047211",
       appStoreLinkLabel: "App Storeで見る",
       link: "https://note.com/mamezlf/n/n775888ddc071",
       linkLabel: "note 記事を読む",
