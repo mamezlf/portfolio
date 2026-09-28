@@ -11,15 +11,15 @@ import styles from "./About.module.css";
 const techGroups = [
   {
     label: "Frontend / Mobile",
-    techs: ["Swift", "SwiftUI", "React", "Next.js", "React Native", "TypeScript", "Expo"],
+    techs: ["Swift", "SwiftUI", "React", "React Native", "TypeScript", "Expo"],
   },
   {
     label: "Backend / Infra",
-    techs: ["Java", "Spring", "PHP", "PostgreSQL", "MySQL", "Docker"],
+    techs: ["Spring", "MySQL", "Docker"],
   },
   {
     label: "Tools",
-    techs: ["Figma", "Jira", "Notion", "Claude", "Codex"],
+    techs: ["GitHub", "Figma", "Jira", "Notion", "Claude", "Codex"],
   },
   {
     label: "AI / Research",
