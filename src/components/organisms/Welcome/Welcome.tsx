@@ -5,6 +5,17 @@ import { ExternalLink } from '../../atoms/ExternalLink';
 import { welcomeContent } from '../../../content/portfolioContent';
 import styles from './Welcome.module.css';
 
+const renderMonoText = (text: string) =>
+  text.split(/([A-Za-z0-9/]+)/g).map((part, index) =>
+    /[A-Za-z0-9/]+/.test(part) ? (
+      <span key={`${part}-${index}`} className={styles.newsMono}>
+        {part}
+      </span>
+    ) : (
+      <React.Fragment key={`${part}-${index}`}>{part}</React.Fragment>
+    ),
+  );
+
 const Welcome: React.FC = () => {
   const selfIntroductionPdfHref = `${import.meta.env.BASE_URL}${encodeURI("張 齢方 | 自己紹介資料.pdf")}`;
 
@@ -34,23 +45,28 @@ const Welcome: React.FC = () => {
           </p>
 
           {/* Plan 05: Philosophy — inline paragraph, not a card box */}
-          <p className={styles.philosophy}>
-            {welcomeContent.philosophyLines.map((line) => (
-              <React.Fragment key={line}>
-                <span>{line}</span>
-                {line === welcomeContent.philosophyLines[0] && (
-                  <>
+          <div className={styles.philosophy}>
+            {welcomeContent.philosophyLines.map((item) => (
+              <p key={item.text} className={styles.newsItem}>
+                <span>
+                  <span className={styles.newsMono}>{item.date}</span>
+                  {" "}
+                  {renderMonoText(item.text)}
+                </span>
+                <span className={styles.newsLinks}>
+                  {item.links.map((link) => (
                     <ExternalLink
-                      href={welcomeContent.appStoreLink}
+                      key={link.href}
+                      href={link.href}
                       className={`research-doc-link ${styles.appStoreLink}`}
                     >
-                      App Storeで見る
+                      {link.label}
                     </ExternalLink>
-                  </>
-                )}
-              </React.Fragment>
+                  ))}
+                </span>
+              </p>
             ))}
-          </p>
+          </div>
 
           {/* Plan 06: Single CTA */}
           <div className={styles.actions}>

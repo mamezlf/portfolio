@@ -30,8 +30,32 @@ export const welcomeContent = {
   eyebrow: "早稲田大学大学院 · 情報理工・情報通信専攻",
   titleLines: ["張 齢方 (Lingfang Zhang)"],
   role: "ソフトウェアエンジニア / NLP 研究者",
-  philosophyLines: ["2026/09/14 初の iOS アプリをリリースしました！"],
-  appStoreLink: "https://apps.apple.com/jp/app/uriage/id6811047211",
+  philosophyLines: [
+    {
+      date: "2026/09/14",
+      text: "初のiOSアプリをリリースしました！",
+      links: [
+        {
+          href: "https://apps.apple.com/jp/app/uriage/id6811047211",
+          label: "App Storeで見る",
+        },
+      ],
+    },
+    {
+      date: "2026/09/29",
+      text: "LINEスタンプを公開しました！",
+      links: [
+        {
+          href: "https://store.line.me/stickershop/product/36915223/ja",
+          label: "LINE Storeで見る",
+        },
+        {
+          href: "https://note.com/mamezlf/n/ne94b87474429?sub_rt=share_pw",
+          label: "記事を見る",
+        },
+      ],
+    },
+  ],
   cta: "プロフィールを見る",
 };
 
@@ -43,9 +67,9 @@ export const aboutContent = {
   name: "Lingfang Zhang（張 齢方）",
   role: "Software Engineer / NLP Researcher",
   paragraphs: [
-    "早稲田大学大学院で自然言語処理・多言語モデルの研究をしながら、日本のIT中小事業企業でフルスタックエンジニアとして1年半以上開発に携わっていました。",
-    "「現場や日々の暮らしで感じた違和感」を形にしていった結果、メルカリ売上管理アプリ URIAGE ができました！現在は App Store でリリースしています。",
-    "作ったものが価値を生み出す瞬間が、一番のやりがいです。",
+    "早稲田大学大学院で自然言語処理・多言語モデルの研究をしながら、日本のIT中小事業企業でフルスタックエンジニアとして1年半以上開発に携わっていました。趣味はハンドメイドで、千羽鶴作りにハマっています。これまでは37本の千羽鶴（3万7000羽）を制作し、世の中誰かのお手元に届けました。",
+    "最近はメルカリ売上管理アプリ URIAGE を開発し、 App Store でリリースしました。また、自分で描いて作ったLINEスタンプを公開し、販売しています。",
+    "作ったものが価値を生み出して、とてもやりがいを感じています😊",
   ],
   infoRows: [
     { label: "大学", value: "早稲田大学大学院" },
