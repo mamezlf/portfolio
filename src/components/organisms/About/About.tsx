@@ -10,8 +10,12 @@ import styles from "./About.module.css";
 
 const techGroups = [
   {
-    label: "Frontend / Mobile",
-    techs: ["Swift", "SwiftUI", "React", "React Native", "TypeScript", "Expo"],
+    label: "Frontend",
+    techs: ["React", "React Native", "TypeScript", "Next.js","Vite"],
+  },
+  {
+    label: "Mobile",
+    techs: ["Swift", "SwiftUI", "SwiftData"],
   },
   {
     label: "Backend / Infra",
@@ -26,8 +30,6 @@ const techGroups = [
     techs: ["PyTorch", "Transformer", "NLP"],
   },
 ];
-
-const coreSet = new Set(["TypeScript", "React", "React Native", "Expo"]);
 
 const About: React.FC = () => {
   return (
@@ -81,7 +83,7 @@ const About: React.FC = () => {
               <div className={styles.skillsCore}>
                 <span className={styles.techGroupLabel}>Core</span>
                 <div className={styles.techTags}>
-                  {["TypeScript", "React", "React Native", "Expo"].map((t) => (
+                  {["TypeScript", "React", "Swift", "SwiftUI"].map((t) => (
                     <Badge key={t} color="core">{t}</Badge>
                   ))}
                 </div>
@@ -89,20 +91,16 @@ const About: React.FC = () => {
 
               {/* Other stacks — compact rows */}
               <div className={styles.skillsRows}>
-                {techGroups.map(({ label, techs }) => {
-                  const remaining = techs.filter((t) => !coreSet.has(t));
-                  if (remaining.length === 0) return null;
-                  return (
-                    <div key={label} className={styles.skillsRow}>
-                      <span className={styles.techGroupLabel}>{label}</span>
-                      <div className={styles.techTags}>
-                        {remaining.map((t) => (
-                          <Badge key={t}>{t}</Badge>
-                        ))}
-                      </div>
+                {techGroups.map(({ label, techs }) => (
+                  <div key={label} className={styles.skillsRow}>
+                    <span className={styles.techGroupLabel}>{label}</span>
+                    <div className={styles.techTags}>
+                      {techs.map((t) => (
+                        <Badge key={t}>{t}</Badge>
+                      ))}
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
             </div>
 
